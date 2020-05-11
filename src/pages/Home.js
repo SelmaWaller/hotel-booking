@@ -88,6 +88,7 @@ function Home() {
             <button onClick={applyFilter}>Apply filters</button>
           </Collapsible>
         </section>
+
         <div className="grid">
           {establishments ? (
             establishments.map((value, index) => {
