@@ -1,0 +1,68 @@
+@keyframes mountainBack {
+  0% {
+    background-position: 30px 20%;
+  }
+
+  100% {
+    background-position: 0 80%;
+  }
+}
+
+@keyframes mountainMiddle {
+  0%,
+  15% {
+    background-position: 170px 90%;
+  }
+
+  100% {
+    background-position: 0 90%;
+  }
+}
+
+@keyframes mountainFront {
+  0%,
+  30% {
+    background-position: -150px 90%;
+  }
+
+  100% {
+    background-position: 0 90%;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes trees {
+  0% {
+    bottom: -20%;
+  }
+
+  100% {
+    bottom: -1px;
+  }
+}
+
+@keyframes birds {
+  0% {
+    opacity: 0;
+    background-position: 0 50%;
+  }
+
+  70% {
+    opacity: 0;
+    background-position: 0 50%;
+  }
+
+  100% {
+    opacity: 1;
+    background-position: 0 100%;
+  }
+}

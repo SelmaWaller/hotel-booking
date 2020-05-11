@@ -1,0 +1,94 @@
+.illustration {
+  overflow: hidden;
+  position: absolute;
+  z-index: -999;
+  width: 100%;
+  height: 100vh;
+
+  .background {
+    background-image: url("./../../svgs/background.svg");
+    background-position: -40px 80%;
+    background-size: cover;
+    width: 115%;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+    background-repeat: no-repeat;
+
+    .mountain {
+      &__back {
+        background-image: url("./../../svgs/mountain_back.svg");
+        background-position: 0 80%;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        bottom: 0;
+        right: 45px;
+        position: absolute;
+        background-repeat: no-repeat;
+        animation: mountainBack 1s ease-in-out;
+      }
+
+      &__middle {
+        background-image: url("./../../svgs/mountain_middle.svg");
+        background-position: 0 90%;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        bottom: -20px;
+        right: 35px;
+        position: absolute;
+        background-repeat: no-repeat;
+        animation: mountainMiddle 1.3s ease-in-out;
+      }
+
+      &__front {
+        background-image: url("./../../svgs/mountain_front.svg");
+        background-position: 0 90%;
+        background-size: cover;
+        width: 107%;
+        height: 100vh;
+        bottom: -10px;
+        left: -10%;
+        position: absolute;
+        background-repeat: no-repeat;
+        animation: mountainFront 1.7s ease-in-out;
+      }
+    }
+  }
+
+  .shadow {
+    background-image: url("./../../svgs/shadow.svg");
+    background-position: center bottom;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    bottom: 0px;
+    position: absolute;
+    background-repeat: no-repeat;
+    animation: shadow 1s ease-in;
+  }
+  .trees {
+    background-image: url("./../../svgs/trees.svg");
+    background-position: center bottom;
+    background-size: cover;
+    width: 90%;
+    height: 100vh;
+    bottom: -1px;
+    position: absolute;
+    background-repeat: no-repeat;
+    animation: trees 0.8s ease-out;
+  }
+
+  .birds {
+    background-image: url("./../../svgs/birds.svg");
+    background-position: 0 100%;
+    background-size: cover;
+    width: 90%;
+    height: 100vh;
+    bottom: -26px;
+    position: absolute;
+    background-repeat: no-repeat;
+    animation: birds 2.3s ease-out;
+  }
+}
