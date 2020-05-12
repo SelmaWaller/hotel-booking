@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  height: 84vh;
+  height: 100vh;
   h1 {
     margin: 120px 0 -5px;
     @include calcRem(50);
@@ -33,7 +33,7 @@
 }
 
 .Collapsible {
-  margin: 20px 0 0 10px;
+  margin: -100px 0 0 10px;
   max-width: 100%;
 
   &__trigger {
@@ -87,7 +87,8 @@
       transition: 200ms ease;
       cursor: pointer;
 
-      &:active {
+      &:active,
+      &:hover {
         transform: translateY(-40px) scale(2);
         transition: 200ms ease;
         z-index: 99;
@@ -171,11 +172,12 @@
     display: flex;
 
     img {
+      transform: scale(1.05);
       width: 150%;
       transition: 350ms ease-out;
 
       &:hover {
-        transform: scale(1.1) translateY(5px);
+        transform: scale(1);
         transition: 200ms ease-in;
       }
     }

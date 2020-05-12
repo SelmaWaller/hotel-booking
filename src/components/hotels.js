@@ -1,6 +1,7 @@
 import React from "react";
 
 import user_icon_light from "./../svgs/icons/user_icon_light.svg";
+import home_icon_black from "./../svgs/icons/home_icon_black.svg";
 
 const Hotels = ({ img, name, price, guests }) => {
   return (

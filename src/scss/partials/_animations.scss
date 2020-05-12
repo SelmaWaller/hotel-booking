@@ -1,6 +1,6 @@
 @keyframes mountainBack {
   0% {
-    background-position: 30px 20%;
+    background-position: 0 0%;
   }
 
   100% {
@@ -11,7 +11,7 @@
 @keyframes mountainMiddle {
   0%,
   15% {
-    background-position: 170px 90%;
+    background-position: 150px 90%;
   }
 
   100% {
@@ -22,7 +22,7 @@
 @keyframes mountainFront {
   0%,
   30% {
-    background-position: -150px 90%;
+    background-position: -120px 90%;
   }
 
   100% {
@@ -64,5 +64,15 @@
   100% {
     opacity: 1;
     background-position: 0 100%;
+  }
+}
+
+@keyframes close-menu {
+  from {
+    filter: blur(20px);
+  }
+
+  to {
+    filter: blur(0);
   }
 }

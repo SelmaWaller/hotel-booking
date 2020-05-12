@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import Collapsible from "react-collapsible";
-
-import establishments from "./../lib/establishments.json";
+import { Link } from "react-router-dom";
 
 import Hotels from "./../components/hotels";
 
@@ -11,7 +10,7 @@ import user_icon_light from "./../svgs/icons/user_icon_light.svg";
 import ReactSlider from "react-slider";
 
 function Home() {
-  useEffect(() => {}, []);
+  const hotels = require("./../lib/establishments.json");
 
   let handleHotelSearch = (input) => {
     const hotelSearch = input.target.value;
@@ -90,8 +89,8 @@ function Home() {
         </section>
 
         <div className="grid">
-          {establishments ? (
-            establishments.map((value, index) => {
+          {hotels ? (
+            hotels.map((value, index) => {
               return (
                 <div className="card" key={index}>
                   <Hotels
@@ -117,6 +116,17 @@ function Home() {
             </>
           )}
         </div>
+
+        {/* google maps shit */}
+
+        <footer className="footer">
+          <div className="footer-links">
+            <Link to="#">Terms and conditions</Link>
+          </div>
+          <div className="copyright">
+            <p>© Selma Waller</p>
+          </div>
+        </footer>
       </main>
     </>
   );
