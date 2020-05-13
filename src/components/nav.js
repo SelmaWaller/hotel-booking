@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
 
-import Hamburger from '../components/hamburger';
 import login_icon_dark from './../svgs/icons/login_icon_dark.svg';
 import logo from './../svgs/logo_dark.svg';
 import home_icon_dark from './../svgs/icons/home_icon_dark.svg';

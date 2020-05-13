@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+import Calendar from 'react-calendar';
 
 import SingleHotel from '../components/single-hotel';
 import hotels from '../lib/establishments.json';
@@ -11,7 +12,15 @@ function HotelSpecific({
     params: {id},
   },
 }) {
-  const hotel = hotels.find(hotel => hotel.id == id);
+  const [date, setDate] = useState(new Date());
+
+  const hotel = hotels.find(hotel => hotel.id === parseInt(id), 10);
+
+  const checkInDate = date => {
+    setDate(date);
+    console.log(date);
+  };
+
   return (
     <div className="contact">
       <SingleHotel
@@ -24,7 +33,25 @@ function HotelSpecific({
         description={hotel.description}
       />
 
-      <EnquiryModal name={hotel.establishmentName} />
+      <EnquiryModal
+        name={hotel.establishmentName}
+        calendarCheckIn={
+          <Calendar
+            name="checkin"
+            id="checkin"
+            onChange={checkInDate}
+            value={date}
+          />
+        }
+        calendarCheckOut={
+          <Calendar
+            name="checkout"
+            id="checkout"
+            onChange={checkInDate}
+            value={date}
+          />
+        }
+      />
 
       <Map
         containerStyle={{height: 300, width: '100%'}}

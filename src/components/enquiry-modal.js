@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EnquiryModal = ({name}) => {
+const EnquiryModal = ({name, calendarCheckIn, calendarCheckOut}) => {
   return (
     <div className="container__inner">
       <div className="modal">
@@ -13,10 +13,10 @@ const EnquiryModal = ({name}) => {
             <label for="email">Email Address</label>
             <input type="text" name="email" id="email" />
             <label for="checkin">Check-in</label>
-            <input type="date" name="checkin" id="checkin" />
+            {calendarCheckIn}
             <label for="checkout">Check-out</label>
-            <input type="date" name="checkout" id="checkout" />
-            <input type="submit" />
+            {calendarCheckOut}
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
