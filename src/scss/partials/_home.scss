@@ -21,6 +21,7 @@
     }
 
     button {
+      pointer-events: none;
       background: none;
       border: none;
       margin: 0;
@@ -28,6 +29,34 @@
       position: absolute;
       right: -13px;
       top: 6px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 290px;
+      max-height: 300px;
+      overflow-y: auto;
+      a {
+        font-family: 'Jost', sans-serif;
+        color: $brand-black;
+        text-decoration: none;
+
+        li {
+          background: $brand-white;
+          border-top: 1px solid $brand-light-grey;
+          padding: 10px 10px 7px;
+
+          &:nth-last-child() {
+            border-bottom: 1px solid $brand-white-grey;
+          }
+        }
+      }
     }
   }
 }
@@ -44,7 +73,7 @@
   }
 
   .is-closed::before {
-    content: "\276F";
+    content: '\276F';
     position: absolute;
     @include calcRem(18);
     transform: rotate(0deg);
@@ -54,7 +83,7 @@
   }
 
   .is-open::before {
-    content: "\276F";
+    content: '\276F';
     position: absolute;
     transform: rotate(90deg);
     margin-left: -20px;
@@ -152,11 +181,18 @@
   }
 }
 
+.hotel-cards {
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: $brand-black;
+  }
+}
 .card {
   .hotel-details {
-    margin-top: -10px;
-    display: flex;
-    align-items: center;
+    p {
+      margin-bottom: 0;
+    }
 
     .hotel-name {
       @include calcRem(17);
@@ -188,7 +224,7 @@
     align-items: center;
 
     img {
-      margin: -2px 5px 0 0;
+      margin: 15px 5px 0 0;
     }
   }
 }

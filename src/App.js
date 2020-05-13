@@ -1,16 +1,16 @@
-import React from "react";
-import "./scss/styles.scss";
+import React from 'react';
+import './scss/styles.scss';
 
-import Navigation from "./components/nav";
-import Illustration from "./components/illustration";
+import Navigation from './components/nav';
+import Footer from './components/footer';
 
-export default function App({ children }) {
+export default function App({children}) {
   return (
     <>
       <Navigation />
       <div className="menu-blur">
-        <Illustration />
         <div className="container">{children}</div>
+        <Footer />
       </div>
     </>
   );

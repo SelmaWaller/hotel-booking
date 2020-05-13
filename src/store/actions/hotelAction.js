@@ -1,21 +1,28 @@
-import { GET_HOTELS, NO_HOTELS } from "./actionTypes";
+import {GET_HOTELS, NO_HOTELS} from './actionTypes';
 
-const hotelData = require("./../../lib/establishments.json");
+const hotels = require('../../lib/establishments.json');
 
-export const HotelAction = (name, price, guests, selfCatering) => {
-  return (dispatch) => {
-    hotelData
-      .then((response) => {
+export const CharactersAction = (page, name) => {
+  return dispatch => {
+    return fetch(
+      `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`
+    )
+      .then(response => {
         return response.json();
       })
-      .then((results) => {
-        console.log(results.data.establishmentName);
+      .then(hotel => {
         dispatch({
           type: GET_HOTELS,
-          image: results.imageURL,
-          name: results.establishmentName,
-          price: results.price,
-          guests: results.maxGuests,
+          name: hotel.establishmentName,
+          email: hotel.establishmentEmail,
+          image: hotel.imageURL,
+          price: hotel.price,
+          guests: hotel.maxGuests,
+          googleLat: hotel.googleLat,
+          googleLong: hotel.googleLong,
+          description: hotel.description,
+          catering: hotel.selfCatering,
+          id: hotel.id,
         });
       })
       .catch(() => {

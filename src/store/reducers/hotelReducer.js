@@ -1,4 +1,4 @@
-import { GET_HOTELS, NO_HOTELS } from "../actions/actionTypes";
+import {GET_HOTELS, NO_HOTELS} from '../actions/actionTypes';
 
 const initialState = [];
 
@@ -12,7 +12,7 @@ const CardReducer = (state = initialState, action) => {
     case NO_HOTELS:
       return {
         ...state,
-        id: [],
+        hotels: [],
       };
     default:
       return state;

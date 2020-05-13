@@ -1,0 +1,38 @@
+.contact {
+  margin-top: 20px;
+  h1 {
+    @include calcRem(26);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .hotel-image {
+    max-height: 350px;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .hotel-details {
+    .paired {
+      margin-top: -5px;
+      margin-right: 25px;
+
+      img {
+        margin-top: -4px;
+        width: 8px;
+        margin-right: 4px;
+      }
+
+      a {
+        color: $brand-black;
+      }
+    }
+  }
+
+  button {
+    margin-bottom: 20px;
+  }
+}

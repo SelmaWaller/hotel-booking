@@ -1,50 +1,37 @@
-import React, { useEffect, useState } from "react";
-import ReactLoading from "react-loading";
-import Collapsible from "react-collapsible";
-import { Link } from "react-router-dom";
+import React from 'react';
+import ReactLoading from 'react-loading';
+import Collapsible from 'react-collapsible';
 
-import Hotels from "./../components/hotels";
+import Illustration from '../components/illustration';
+import SearchBar from '../components/search-bar';
+import Hotels from '../components/hotels';
+import HotelLocations from '../components/hotel-locations';
 
-import search_icon from "./../svgs/icons/search_icon.svg";
-import user_icon_light from "./../svgs/icons/user_icon_light.svg";
-import ReactSlider from "react-slider";
+import user_icon_light from '../svgs/icons/user_icon_light.svg';
+import ReactSlider from 'react-slider';
 
 function Home() {
-  const hotels = require("./../lib/establishments.json");
-
-  let handleHotelSearch = (input) => {
-    const hotelSearch = input.target.value;
-  };
-
-  let handleHotelFilter;
-
-  let isSelfCatering;
+  const hotels = require('../lib/establishments.json');
 
   let applyFilter;
+
   return (
     <>
-      <header>
+      <Illustration />
+
+      <header className="container__inner">
         <div className="header">
           <h1>BERGEN</h1>
           <p>
             Explore the city of Norway <br />
             surrounded by The Seven Mountains
           </p>
-          <div className="searchBar">
-            <input
-              type="text"
-              placeholder={`Search for a hotel`}
-              onChange={handleHotelFilter}
-            />
-            <button onClick={handleHotelSearch}>
-              <img src={search_icon} alt="search" />
-            </button>
-          </div>
+          <SearchBar hotels={hotels} />
         </div>
       </header>
 
       <main>
-        <section>
+        <section className="container__inner">
           <Collapsible trigger="Filter hotels" open={true}>
             <p>Prince per night</p>
             <ReactSlider
@@ -55,8 +42,8 @@ function Home() {
               min={0}
               max={200}
               step={10}
-              ariaLabel={["Min price", "Max price"]}
-              ariaValuetext={(currentValue) =>
+              ariaLabel={['Min price', 'Max price']}
+              ariaValuetext={currentValue =>
                 console.log(`Current value ${currentValue.valueNow}`)
               }
               renderThumb={(props, state) => (
@@ -88,7 +75,7 @@ function Home() {
           </Collapsible>
         </section>
 
-        <div className="grid">
+        <div className="grid container__inner">
           {hotels ? (
             hotels.map((value, index) => {
               return (
@@ -99,6 +86,7 @@ function Home() {
                     name={value.establishmentName}
                     price={value.price}
                     guests={value.maxGuests}
+                    id={value.id}
                   />
                 </div>
               );
@@ -107,8 +95,8 @@ function Home() {
             <>
               <div className="loading-circle">
                 <ReactLoading
-                  type={"spinningBubbles"}
-                  color={"#ffc69c"}
+                  type={'spinningBubbles'}
+                  color={'#ffc69c'}
                   height={100}
                   width={100}
                 />
@@ -117,16 +105,7 @@ function Home() {
           )}
         </div>
 
-        {/* google maps shit */}
-
-        <footer className="footer">
-          <div className="footer-links">
-            <Link to="#">Terms and conditions</Link>
-          </div>
-          <div className="copyright">
-            <p>© Selma Waller</p>
-          </div>
-        </footer>
+        <HotelLocations hotels={hotels} />
       </main>
     </>
   );
