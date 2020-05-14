@@ -5,7 +5,7 @@ import Collapsible from 'react-collapsible';
 import Illustration from '../components/illustration';
 import SearchBar from '../components/search-bar';
 import Hotels from '../components/hotels';
-import HotelLocations from '../components/hotel-locations';
+import AllHotelLocations from '../components/all-hotel-locations';
 
 import user_icon_light from '../svgs/icons/user_icon_light.svg';
 import ReactSlider from 'react-slider';
@@ -105,7 +105,7 @@ function Home() {
           )}
         </div>
 
-        <HotelLocations hotels={hotels} />
+        <AllHotelLocations hotels={hotels} />
       </main>
     </>
   );

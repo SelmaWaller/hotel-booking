@@ -5,34 +5,18 @@
   z-index: 999;
 
   .toggle-button {
-    margin: 0;
-    width: 32px;
-    height: 42px;
-    padding-top: 7px;
-    padding-right: 15px;
-    border-radius: 0;
-    background: none;
     position: fixed;
-    width: 100%;
+    width: 45px;
+    margin-right: 2px;
+    height: 45px;
+    border-radius: 100px;
+    right: 5px;
+    top: -23px;
+    background: $brand-white;
+    box-shadow: 2px 2px 15px rgba($brand-dark-grey, 0.3);
 
     &:focus {
       outline: 0;
-    }
-
-    &__background {
-      position: fixed;
-      width: 45px;
-      margin-right: 2px;
-      height: 45px;
-      border-radius: 100px;
-      right: 7px;
-      top: -25px;
-      background: $brand-white;
-      box-shadow: 2px 2px 15px rgba($brand-dark-grey, 0.3);
-
-      &:focus {
-        outline: 0;
-      }
     }
   }
 
@@ -40,8 +24,8 @@
   .hamburger__close {
     position: fixed;
     pointer-events: none;
-    top: 18px;
-    right: 15px;
+    top: 20px;
+    right: 13px;
     transition: 200ms ease;
 
     div:not(.paired) {

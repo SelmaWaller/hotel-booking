@@ -31,7 +31,7 @@ body {
 input {
   font-family: 'Jost', sans-serif;
   background: $brand-white;
-  border: 1px solid $brand-light-grey;
+  border: 1px solid rgba($brand-light-grey, 0.7);
   padding: 10px 10px 7px;
   max-width: 100%;
   width: 100%;
@@ -147,7 +147,8 @@ button {
 }
 
 .google-hotel-info {
-  h3 {
+  h3,
+  h4 {
     margin-top: 0;
   }
 

@@ -1,14 +1,17 @@
-.contact {
-  margin-top: 20px;
+.contact,
+.contact-blur {
   h1 {
     @include calcRem(26);
     font-weight: 500;
     margin-bottom: 10px;
   }
 
+  .enquiry-button {
+    margin-top: -30px;
+  }
   .hotel-image {
     max-height: 350px;
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -16,6 +19,7 @@
   }
 
   .hotel-details {
+    max-width: 100%;
     .paired {
       margin-top: -5px;
       margin-right: 25px;
@@ -35,4 +39,8 @@
   button {
     margin-bottom: 20px;
   }
+}
+
+.contact-blur {
+  filter: blur(100px);
 }

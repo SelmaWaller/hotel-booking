@@ -10,7 +10,6 @@ const SingleHotel = ({
   catering,
   email,
   description,
-  openModal,
 }) => {
   return (
     <>
@@ -35,7 +34,6 @@ const SingleHotel = ({
           </div>
         </div>
         <p>{description}</p>
-        <button onClick={openModal}>Make enquiry</button>
       </div>
     </>
   );

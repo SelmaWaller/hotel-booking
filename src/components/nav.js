@@ -8,15 +8,6 @@ import contact_icon_dark from './../svgs/icons/contact_icon_dark.svg';
 
 const Navigation = ({login}) => {
   const [navOpen, setNavOpen] = useState(false);
-  const [navBar, setNavBar] = useState(false);
-
-  window.onscroll = () => {
-    if (window.pageYOffset < 1) {
-      setNavBar(true);
-    } else {
-      setNavBar(false);
-    }
-  };
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
@@ -35,10 +26,7 @@ const Navigation = ({login}) => {
   return (
     <>
       <div className="navigation">
-        <button
-          className={navBar ? 'toggle-button' : 'toggle-button__background'}
-          onClick={toggleNav}
-        ></button>
+        <button className="toggle-button" onClick={toggleNav}></button>
         <div className="hamburger">
           <div className="paired">
             <div

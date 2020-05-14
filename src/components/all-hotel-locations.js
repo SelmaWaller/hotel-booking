@@ -3,7 +3,7 @@ import {Link, BrowserRouter} from 'react-router-dom';
 import {Map, InfoWindow, GoogleApiWrapper, Marker} from 'google-maps-react';
 
 import user_icon_black from '../svgs/icons/user_icon_black.svg';
-const HotelLocations = ({hotels, google}) => {
+const AllHotelLocations = ({hotels, google}) => {
   const [activeMarker, setActiveMarker] = useState();
   const [hotelId, setHotelId] = useState();
   const [activeHotel, setActiveHotel] = useState();
@@ -61,4 +61,4 @@ const HotelLocations = ({hotels, google}) => {
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyCRM5Te1P06jmywUUMW9EHQPBEtMcXFBkc',
-})(HotelLocations);
+})(AllHotelLocations);
