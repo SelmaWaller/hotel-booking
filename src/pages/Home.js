@@ -17,8 +17,9 @@ function Home() {
 
   return (
     <>
-      <Illustration />
-
+      <div className="home-illustration">
+        <Illustration />
+      </div>
       <header className="container__inner">
         <div className="header">
           <h1>BERGEN</h1>
@@ -30,30 +31,32 @@ function Home() {
         </div>
       </header>
 
-      <main>
+      <main className="content-animation">
         <section className="container__inner">
           <Collapsible trigger="Filter hotels" open={true}>
             <p>Prince per night</p>
-            <ReactSlider
-              className="slider"
-              thumbClassName="slider__thumb"
-              trackClassName="slider__track"
-              defaultValue={[0, 200]}
-              min={0}
-              max={200}
-              step={10}
-              ariaLabel={['Min price', 'Max price']}
-              ariaValuetext={currentValue =>
-                console.log(`Current value ${currentValue.valueNow}`)
-              }
-              renderThumb={(props, state) => (
-                <div className="currentValue" {...props}>
-                  {`$` + state.valueNow}
-                </div>
-              )}
-              pearling
-              minDistance={10}
-            />
+            <div className="slider-container">
+              <ReactSlider
+                className="slider"
+                thumbClassName="slider__thumb"
+                trackClassName="slider__track"
+                defaultValue={[0, 200]}
+                min={0}
+                max={200}
+                step={10}
+                ariaLabel={['Min price', 'Max price']}
+                ariaValuetext={currentValue =>
+                  console.log(`Current value ${currentValue.valueNow}`)
+                }
+                renderThumb={(props, state) => (
+                  <div className="currentValue" {...props}>
+                    {`$` + state.valueNow}
+                  </div>
+                )}
+                pearling
+                minDistance={10}
+              />
+            </div>
 
             <div className="aligned-options">
               <div className="self-catering">
@@ -75,7 +78,7 @@ function Home() {
           </Collapsible>
         </section>
 
-        <div className="grid container__inner">
+        <div className="grid all-hotels">
           {hotels ? (
             hotels.map((value, index) => {
               return (
@@ -105,7 +108,9 @@ function Home() {
           )}
         </div>
 
-        <AllHotelLocations hotels={hotels} />
+        <div className="google-map">
+          <AllHotelLocations hotels={hotels} />
+        </div>
       </main>
     </>
   );

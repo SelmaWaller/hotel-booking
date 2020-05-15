@@ -13,6 +13,31 @@
   box-shadow: 0 0 20px rgba($brand-grey, 0.2);
   animation: enquiry-modal-popup 400ms ease-out;
 
+  .date-inputs {
+    margin-top: 0;
+    margin-bottom: -10px;
+    color: rgb(255, 92, 92);
+    transition: 200ms ease;
+    input {
+      width: 93px;
+      border: none;
+      padding: 10px 0;
+      outline: none;
+    }
+    &__hidden {
+      opacity: 0;
+      margin-top: -30px;
+      margin-bottom: -10px;
+      transform: translateY(-10px);
+      transition: 200ms ease;
+      input {
+        width: 93px;
+        border: none;
+        padding: 10px 0;
+        outline: none;
+      }
+    }
+  }
   .closeModal {
     background: none;
     border-radius: 0;
@@ -40,10 +65,29 @@
     padding: 10px;
   }
 
+  .paired input {
+    cursor: default;
+  }
+
   input {
     max-width: 92%;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     margin-top: 5px;
+  }
+
+  .error {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: rgb(255, 92, 92);
+    transition: 200ms ease;
+
+    &__hidden {
+      opacity: 0;
+      margin-top: 0;
+      margin-bottom: -10px;
+      transform: translateY(-10px);
+      transition: 200ms ease;
+    }
   }
 
   img {
@@ -126,7 +170,10 @@
 
       &__weekdays__weekday {
         text-transform: lowercase;
+
+        /*[aria-label='søndag'] {color: red;}*/
       }
+
       &__days__day:enabled:hover {
         background: $brand-orange-medium-light;
       }
