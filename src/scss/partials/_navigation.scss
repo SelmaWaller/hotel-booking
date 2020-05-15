@@ -12,7 +12,7 @@
     border-radius: 100px;
     right: 5px;
     top: -23px;
-    background: $brand-white;
+    background: $brand-dark-grey;
     box-shadow: 2px 2px 15px rgba($brand-dark-grey, 0.3);
 
     &:focus {
@@ -25,12 +25,12 @@
     position: fixed;
     pointer-events: none;
     top: 20px;
-    right: 13px;
+    right: 14px;
     transition: 200ms ease;
 
     div:not(.paired) {
       height: 2px;
-      background: $brand-dark-grey;
+      background: $brand-white;
       transition: 200ms ease;
       width: 14px;
     }
@@ -91,25 +91,15 @@
       }
     }
   }
-
-  .content-background {
-    &__hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
 }
 
 .content-background + .menu-blur {
-  filter: blur(10px);
-  transition: 200ms ease;
+  filter: blur(30px);
   overflow-x: hidden;
 }
 
 .content-background__hidden + .menu-blur {
   filter: blur(0);
-  transition: 200ms ease-in;
-  animation: close-menu 200ms ease;
 }
 
 .transparent-background {

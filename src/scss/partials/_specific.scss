@@ -1,38 +1,76 @@
 .contact,
 .contact-blur {
-  h1 {
-    @include calcRem(26);
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-
   .enquiry-button {
     margin-top: -30px;
   }
-  .hotel-image {
-    max-height: 350px;
-    max-width: 100%;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+
+  .header-area {
+    position: relative;
+    h1 {
+      background: white;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 7px 15px 7px 8px;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      @include calcRem(20);
+      box-shadow: 0 0 15px rgba($brand-black, 0.3);
+      font-weight: 500;
+      margin-bottom: 10px;
+      z-index: 99;
+    }
+    .hotel-image {
+      max-height: 400px;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+      img {
+        width: 200%;
+        transition: 350ms ease-out;
+      }
+    }
   }
 
   .hotel-details {
-    max-width: 100%;
+    margin-top: -12px;
+    display: grid;
+    align-items: center;
+
+    p {
+      margin-top: 30px;
+    }
+
     .paired {
-      margin-top: -5px;
-      margin-right: 25px;
+      margin-right: 20px;
+
+      .dot {
+        position: absolute;
+        margin-top: 20px;
+        background: $brand-dark-grey;
+        width: 3px;
+        height: 3px;
+        border-radius: 10px;
+      }
+
+      p {
+        margin: 10px 0 4px;
+      }
 
       img {
-        margin-top: -4px;
+        margin-top: 5px;
         width: 8px;
-        margin-right: 4px;
+        margin-right: 5px;
       }
 
-      a {
-        color: $brand-black;
+      .replace-mail {
+        margin-top: 10px;
       }
+    }
+    a {
+      color: $brand-black;
     }
   }
 
@@ -42,5 +80,5 @@
 }
 
 .contact-blur {
-  filter: blur(100px);
+  filter: blur(30px);
 }

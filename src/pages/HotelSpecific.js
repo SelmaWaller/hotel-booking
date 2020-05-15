@@ -18,6 +18,7 @@ function HotelSpecific({
   const [activeMarker, setActiveMarker] = useState();
   const [activeHotel, setActiveHotel] = useState();
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
+
   const hotel = hotels.find(hotel => hotel.id === parseInt(id), 10);
 
   const toggleModal = () => {
@@ -42,8 +43,6 @@ function HotelSpecific({
           <div className="bar1"></div>
           <div className="bar2"></div>
         </button>
-        <h2>Establishment</h2>
-        <h3>{hotel.establishmentName}</h3>
         <div className="form">
           <form method="POST" action="enquiry-success.php">
             <label htmlFor="clientName">Full name</label>
@@ -52,8 +51,8 @@ function HotelSpecific({
             <input type="text" name="email" id="email" />
             <label>Check-in & Check-out</label>
             <Calendar
-              name="checkin"
-              id="checkin"
+              name="checkinout"
+              id="checkinout"
               onChange={checkedDates}
               value={dates}
               selectRange={true}
@@ -65,6 +64,10 @@ function HotelSpecific({
           </form>
         </div>
         <img src={cabin_mobile} alt="illustration" />
+      </div>
+      <div className={modalOpen ? 'title' : 'title__closed'}>
+        <h3>Establishment</h3>
+        <h2>{hotel.establishmentName}</h2>
       </div>
 
       <div className={modalOpen ? 'contact-blur' : 'contact'}>
@@ -81,14 +84,6 @@ function HotelSpecific({
           <button onClick={toggleModal}>Make enquiry</button>
         </div>
 
-        <div
-          className={
-            modalOpen
-              ? 'container__inner modal'
-              : 'container__inner modal__closed'
-          }
-        ></div>
-
         <Map
           containerStyle={{height: 300, width: '100%'}}
           google={google}
@@ -100,7 +95,6 @@ function HotelSpecific({
               setActiveMarker(marker);
               setActiveHotel(hotel);
               setShowingInfoWindow(true);
-              console.log(props);
             }}
             key={hotel.id}
             position={{lat: hotel.googleLat, lng: hotel.googleLong}}

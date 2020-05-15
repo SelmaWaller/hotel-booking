@@ -67,12 +67,22 @@
   }
 }
 
-@keyframes close-menu {
+@keyframes enquiry-modal-popup {
   from {
-    filter: blur(10px);
+    transform: translateY(100px);
   }
-
   to {
-    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes enquiry-title-popup {
+  from {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

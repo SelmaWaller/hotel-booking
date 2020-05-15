@@ -43,8 +43,8 @@ const SearchBar = ({hotels}) => {
         </button>
         <ul>
           {hotelMatches.map(hotel => (
-            <Link to={`/hotel-specific/${hotel.id}`}>
-              <li key={hotel.id}>{hotel.establishmentName}</li>
+            <Link key={hotel.id} to={`/hotel-specific/${hotel.id}`}>
+              <li>{hotel.establishmentName}</li>
             </Link>
           ))}
         </ul>

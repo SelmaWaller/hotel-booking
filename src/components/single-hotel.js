@@ -13,27 +13,39 @@ const SingleHotel = ({
 }) => {
   return (
     <>
-      <div className="container__inner">
+      <div className="header-area">
+        <div className="hotel-image">
+          <img src={image} alt={name} />
+        </div>
         <h1>{name}</h1>
-      </div>
-      <div className="hotel-image">
-        <img src={image} alt={name} />
       </div>
       <div className="container__inner">
         <div className="hotel-details">
           <div className="paired">
-            <img src={user_icon_light} alt="max-guests" />
-            <p>{guests}</p>
+            <div className="paired">
+              <img src={user_icon_light} alt="max-guests" />
+              <p>{guests}</p>
+            </div>
+            <div className="paired">
+              <div className="dot"></div>
+            </div>
+            <div className="paired">
+              <p>${price}</p>
+            </div>
+            <div className="paired">
+              <div className="dot"></div>
+            </div>
+            {catering ? (
+              <p>Self-Catering</p>
+            ) : (
+              <div className="replace-mail">
+                <a href={`mailto:${email}`}>{email}</a>
+              </div>
+            )}
           </div>
-          <div className="paired">
-            <p>${price}</p>
-          </div>
-          <div className="paired">{catering ? <p>Self-Catering</p> : ''}</div>
-          <div className="paired">
-            <a href={`mailto:${email}`}>{email}</a>
-          </div>
+          {catering ? <a href={`mailto:${email}`}>{email}</a> : ''}
+          <p>{description}</p>
         </div>
-        <p>{description}</p>
       </div>
     </>
   );

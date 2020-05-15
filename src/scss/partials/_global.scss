@@ -37,6 +37,10 @@ input {
   width: 100%;
   letter-spacing: 0.5px;
   cursor: pointer;
+
+  &:focus {
+    outline-color: $brand-orange-light;
+  }
 }
 
 button {
