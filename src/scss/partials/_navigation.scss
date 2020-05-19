@@ -114,82 +114,147 @@
   }
 }
 
-.content {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 99;
-  background: white;
-  height: 37vh;
-  transition: 200ms ease;
-  padding: 10px;
+.visitor,
+.login,
+.admin {
+  .content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background: white;
+    height: 37vh;
+    transition: 200ms ease;
+    padding: 10px;
+
+    &__hidden {
+      display: none;
+    }
+
+    .admin-link {
+      display: none;
+    }
+
+    .logo {
+      display: flex;
+
+      img {
+        margin-top: -15px;
+      }
+      h3 {
+        padding-left: 10px;
+        font-weight: 500;
+      }
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      position: relative;
+
+      h3 {
+        padding-left: 20px;
+        font-weight: 400;
+      }
+
+      button {
+        position: absolute;
+        right: 30px;
+        top: -15px;
+      }
+    }
+
+    .pages {
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        margin-top: -5px;
+        a {
+          display: flex;
+          text-decoration: none;
+          align-items: center;
+          color: $brand-dark-grey;
+
+          img {
+            margin-top: -5px;
+
+            &:nth-child(0) {
+              padding-left: 50px;
+            }
+          }
+
+          h3 {
+            padding-left: 23px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+.visitor__hidden {
+  display: none;
+}
+
+.admin {
+  .content {
+    height: 60vh;
+    background: $brand-dark-grey;
+
+    h3 {
+      color: $brand-white;
+    }
+
+    .admin-link {
+      display: block;
+    }
+  }
 
   &__hidden {
     display: none;
   }
+}
 
-  .logo {
-    display: flex;
+.login {
+  .content {
+    height: 43vh;
 
-    img {
-      margin-top: -15px;
-    }
-    h3 {
-      padding-left: 10px;
-      font-weight: 500;
-    }
-  }
+    form {
+      h3 {
+        margin: 0;
+      }
+      input {
+        width: 200px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+      .error {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: rgb(255, 92, 92);
+        transition: 200ms ease;
 
-  .login {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    position: relative;
-
-    h3 {
-      padding-left: 20px;
-      font-weight: 400;
-    }
-
-    button {
-      position: absolute;
-      right: 30px;
-      top: -15px;
-    }
-  }
-
-  .pages {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-
-    ul {
-      padding: 0;
-      list-style: none;
-    }
-
-    li {
-      margin-top: -5px;
-      a {
-        display: flex;
-        text-decoration: none;
-        align-items: center;
-        color: $brand-dark-grey;
-
-        img {
-          margin-top: -5px;
-
-          &:nth-child(0) {
-            padding-left: 50px;
-          }
-        }
-
-        h3 {
-          padding-left: 23px;
-          font-weight: 400;
+        &__hidden {
+          opacity: 0;
+          margin-top: 0;
+          margin-bottom: -10px;
+          transform: translateY(-10px);
+          transition: 200ms ease;
         }
       }
     }
+  }
+  &__hidden {
+    display: none;
   }
 }

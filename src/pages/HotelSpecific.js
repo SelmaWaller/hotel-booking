@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import {Map, InfoWindow, GoogleApiWrapper, Marker} from 'google-maps-react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {addYears} from 'date-fns';
 
 import SingleHotel from '../components/single-hotel';
-import hotels from '../lib/establishments.json';
 import cabin_mobile from '../images/cabin_mobile.png';
 function HotelSpecific({
   google,
@@ -13,16 +13,26 @@ function HotelSpecific({
     params: {id},
   },
 }) {
-  const hotel = hotels.find(hotel => hotel.id === parseInt(id), 10);
-
+  const [hotels, setHotels] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [dates, setDates] = useState(new Date());
   const [activeMarker, setActiveMarker] = useState();
   const [activeHotel, setActiveHotel] = useState();
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
-
   const [clientNameError, setClientNameError] = useState(true);
   const [emailError, setEmailError] = useState(true);
+
+  useEffect(() => {
+    axios.get('/php-files/establishments.json').then(hotels => {
+      setHotels(hotels.data);
+    });
+  }, []);
+
+  if (hotels.length === 0) {
+    return 'loading';
+  }
+
+  const hotel = hotels.find(hotel => hotel.id === parseInt(id), 10);
 
   let handleChange = input => {
     let clientName = input.target.name;
@@ -79,7 +89,7 @@ function HotelSpecific({
           <div className="bar2"></div>
         </button>
         <div className="form">
-          <form method="POST" action="enquiry-success.php">
+          <form method="POST" action="/holidaze/enquiry-success.php">
             <label htmlFor="clientName">Full name</label>
             <input
               onChange={handleChange}

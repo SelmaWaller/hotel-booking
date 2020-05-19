@@ -22,11 +22,11 @@ $newEnquiry->children = $_POST["children"];
 $newEnquiry->notes = $_POST["notes"];
 
 //Adds object to array
-$enquiriesList = file_get_contents('enquiries.json');
+$enquiriesList = file_get_contents('client/public/hotel-data/enquiries.json');
 $jsonInput = json_decode($enquiriesList, true);
 array_push($jsonInput, $newEnquiry);
 
 //Writes array to JSON file
 $jsonData = json_encode($jsonInput);
-file_put_contents('enquiries.json', $jsonData);
+file_put_contents('client/public/hotel-data/enquiries.json', $jsonData);
 ?>

@@ -64,6 +64,31 @@ button {
   }
 }
 
+.secondaryButton {
+  margin-top: 30px;
+  padding: 4px 11px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  border: 1px solid $brand-orange;
+  color: $brand-orange;
+  font-family: 'Jost', sans-serif;
+  @include calcRem(15);
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($brand-orange-light, 0.2);
+    color: $brand-orange-medium-dark;
+    border-color: $brand-orange-medium-dark;
+  }
+
+  &:active {
+    background: rgba($brand-orange-light, 0.6);
+    color: $brand-orange-dark;
+    border-color: $brand-orange-dark;
+  }
+}
+
 @supports (display: grid) {
   .grid {
     max-width: 2000px;

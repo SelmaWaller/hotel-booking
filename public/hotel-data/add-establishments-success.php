@@ -30,11 +30,11 @@ $newEstablishment->selfCatering = $_POST["selfCatering"];
 $newEstablishment->id = $_POST["id"];
 
 //Adds object to array
-$establishmentsList = file_get_contents('establishments.json');
+$establishmentsList = file_get_contents('client/public/hotel-data/establishments.json');
 $jsonInput = json_decode($establishmentsList, true);
 array_push($jsonInput, $newEstablishment);
 
 //Writes array to JSON file
 $jsonData = json_encode($jsonInput);
-file_put_contents('establishments.json', $jsonData);
+file_put_contents('client/public/hotel-data/establishments.json', $jsonData);
 ?>

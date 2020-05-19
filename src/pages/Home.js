@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import ReactLoading from 'react-loading';
 import Collapsible from 'react-collapsible';
 
@@ -10,8 +11,13 @@ import AllHotelLocations from '../components/all-hotel-locations';
 import user_icon_light from '../svgs/icons/user_icon_light.svg';
 import ReactSlider from 'react-slider';
 
-function Home() {
-  const hotels = require('../lib/establishments.json');
+export default function Home() {
+  const [hotels, setHotels] = useState([]);
+  useEffect(() => {
+    axios.get('/php-files/establishments.json').then(hotels => {
+      setHotels(hotels.data);
+    });
+  }, []);
 
   let applyFilter;
 
@@ -115,5 +121,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;
