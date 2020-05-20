@@ -26,14 +26,20 @@
       margin-top: 5px;
     }
 
+    textarea {
+      margin-bottom: -2px;
+    }
+
     h1 {
+      @include calcRem(28);
+      font-weight: 500;
       margin-top: 5px;
     }
 
     .error {
       margin-top: 0;
       margin-bottom: 10px;
-      color: rgb(255, 92, 92);
+      color: rgba($brand-orange, 0.8);
       transition: 200ms ease;
 
       &__hidden {

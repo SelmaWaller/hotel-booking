@@ -10,11 +10,12 @@ import AllHotelLocations from '../components/all-hotel-locations';
 
 import user_icon_light from '../svgs/icons/user_icon_light.svg';
 import ReactSlider from 'react-slider';
+import {ESTABLISHMENTS_API} from '../constants/constants';
 
 export default function Home() {
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
-    axios.get('/php-files/establishments.json').then(hotels => {
+    axios.get(ESTABLISHMENTS_API).then((hotels) => {
       setHotels(hotels.data);
     });
   }, []);
@@ -51,7 +52,7 @@ export default function Home() {
                 max={200}
                 step={10}
                 ariaLabel={['Min price', 'Max price']}
-                ariaValuetext={currentValue =>
+                ariaValuetext={(currentValue) =>
                   console.log(`Current value ${currentValue.valueNow}`)
                 }
                 renderThumb={(props, state) => (
@@ -86,16 +87,16 @@ export default function Home() {
 
         <div className="grid all-hotels">
           {hotels ? (
-            hotels.map((value, index) => {
+            hotels.map((hotel, index) => {
               return (
                 <div className="card" key={index}>
                   <Hotels
                     key={index}
-                    img={value.imageUrl}
-                    name={value.establishmentName}
-                    price={value.price}
-                    guests={value.maxGuests}
-                    id={value.id}
+                    img={hotel.imageUrl}
+                    name={hotel.establishmentName}
+                    price={hotel.price}
+                    guests={hotel.maxGuests}
+                    id={hotel.id}
                   />
                 </div>
               );

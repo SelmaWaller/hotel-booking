@@ -124,7 +124,7 @@
     left: 0;
     z-index: 99;
     background: white;
-    height: 37vh;
+    height: 300px;
     transition: 200ms ease;
     padding: 10px;
 
@@ -208,7 +208,7 @@
 
 .admin {
   .content {
-    height: 60vh;
+    height: 480px;
     background: $brand-dark-grey;
 
     h3 {
@@ -227,7 +227,7 @@
 
 .login {
   .content {
-    height: 43vh;
+    height: 325px;
 
     form {
       h3 {
@@ -241,13 +241,13 @@
       .error {
         margin-top: 0;
         margin-bottom: 10px;
-        color: rgb(255, 92, 92);
+        color: rgba($brand-orange, 0.8);
         transition: 200ms ease;
 
         &__hidden {
           opacity: 0;
           margin-top: 0;
-          margin-bottom: -10px;
+          margin-bottom: 0;
           transform: translateY(-10px);
           transition: 200ms ease;
         }
@@ -256,5 +256,9 @@
   }
   &__hidden {
     display: none;
+  }
+
+  button {
+    margin-top: 10px;
   }
 }

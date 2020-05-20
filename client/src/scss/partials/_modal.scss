@@ -1,0 +1,223 @@
+.modal,
+.title {
+  display: block;
+  padding-top: 20px;
+  max-width: 84%;
+  width: 900px;
+  margin: 79px 30px 30px;
+  position: absolute;
+  z-index: 95;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  background: $brand-white;
+  box-shadow: 0 0 20px rgba($brand-grey, 0.2);
+  animation: enquiry-modal-popup 400ms ease-out;
+
+  .title {
+    width: unset;
+    background: none;
+    z-index: 1;
+    margin-top: -100px;
+    margin-left: -10px;
+    animation: enquiry-title-popup 400ms ease-out;
+    box-shadow: none;
+
+    input {
+      outline: none;
+      @include calcRem(20);
+      font-weight: 500;
+      background: $brand-white;
+      height: 40px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      width: 100%;
+      padding: 5px 10px 0;
+      border: none;
+      box-shadow: inset 0 -5px 10px rgba($brand-shadow, 0.4);
+    }
+  }
+
+  form {
+    padding: 10px;
+    @include calcRem(15);
+
+    .paired input {
+      cursor: default;
+    }
+
+    input,
+    textarea {
+      @include calcRem(15);
+      max-width: 92%;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+
+    .error {
+      @include calcRem(15);
+      margin-top: -2px;
+      margin-bottom: 15px;
+      color: rgba($brand-orange, 0.8);
+      transition: 200ms ease;
+
+      &__hidden {
+        opacity: 0;
+        margin-top: 0;
+        margin-bottom: -10px;
+        transform: translateY(-10px);
+        transition: 200ms ease;
+      }
+    }
+
+    .date-inputs,
+    .date-inputs__placeholder {
+      @include calcRem(15);
+      margin-top: 0;
+      margin-bottom: -10px;
+
+      .hasDates {
+        margin: 0 5px 0 -6px;
+        color: $brand-black;
+
+        &__hidden {
+          margin: 0 5px 0 -33px;
+          color: $brand-orange;
+
+          input {
+            color: $brand-orange;
+          }
+        }
+      }
+
+      input {
+        @include calcRem(15);
+        width: 93px;
+        border: none;
+        margin-top: -5px;
+        padding: 10px 0;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .date-inputs__placeholder {
+      width: 100%;
+      span {
+        display: none;
+      }
+      input {
+        width: 100%;
+        background: none;
+        margin-top: -5px;
+        color: rgba($brand-orange, 0.8);
+        box-shadow: none;
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    .adultsAndChildren {
+      display: flex;
+      margin-top: 15px;
+
+      .guests {
+        display: flex;
+        align-items: center;
+
+        .error,
+        .error__hidden {
+          margin-top: 5px;
+          margin-left: 20px;
+        }
+
+        .guest-counter {
+          position: relative;
+          input {
+            text-align: center;
+            padding-left: 35px;
+            padding-right: 35px;
+            width: 35px;
+            border: 1px solid rgba($brand-light-grey, 0.7);
+            @include calcRem(16);
+          }
+        }
+      }
+
+      .children {
+        margin-left: 15%;
+      }
+
+      .addGuest,
+      .removeGuest {
+        background: $brand-orange-medium-light;
+        padding: 0;
+        margin: 5px 0 0;
+        height: 42px;
+        right: 0px;
+        width: 30px;
+        color: $brand-black;
+        @include calcRem(28);
+        border-radius: 0;
+        position: absolute;
+        font-weight: 100;
+        outline: none;
+
+        span {
+          position: absolute;
+          top: 0;
+          right: 6px;
+        }
+
+        &:disabled {
+          background: rgba($brand-light-grey, 0.5);
+          color: $brand-grey;
+        }
+      }
+
+      .removeGuest {
+        left: 0;
+        span {
+          @include calcRem(35);
+          font-weight: 200;
+          top: -7px;
+          left: 7px;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: -7px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .closeModal {
+    background: none;
+    border-radius: 0;
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    .bar1,
+    .bar2 {
+      position: absolute;
+      top: 7px;
+      right: 18px;
+      width: 2px;
+      height: 25px;
+      background: $brand-black;
+      transform: rotate(45deg);
+    }
+    .bar2 {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__closed {
+    display: none;
+  }
+}

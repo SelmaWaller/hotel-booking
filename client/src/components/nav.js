@@ -16,7 +16,6 @@ import messages_icon from '../svgs/icons/messages_icon.svg';
 const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [loginInfo, setLoginInfo] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
   const [usernameError, setUsernameError] = useState(true);
   const [passwordError, setPasswordError] = useState(true);
 
@@ -25,7 +24,7 @@ const Navigation = () => {
     toggleBodyScroll(!navOpen);
   };
 
-  const toggleBodyScroll = hidden => {
+  const toggleBodyScroll = (hidden) => {
     document.body.style.overflow = hidden ? 'hidden' : 'inherit';
   };
 
@@ -36,7 +35,7 @@ const Navigation = () => {
 
   const loginTokenExists = localStorage.getItem('token');
 
-  let handleChange = input => {
+  let handleChange = (input) => {
     let name = input.target.name;
     let value = input.target.value;
     let username = /^admin$/;
@@ -54,7 +53,7 @@ const Navigation = () => {
     }
   };
 
-  let handleSubmit = event => {
+  let handleSubmit = (event) => {
     event.preventDefault();
     localStorage.setItem('admin', 'admin');
     localStorage.setItem('password', 'admin');
@@ -62,7 +61,7 @@ const Navigation = () => {
     setLoginInfo(false);
   };
 
-  let cancelLogin = event => {
+  let cancelLogin = (event) => {
     event.preventDefault();
     localStorage.removeItem('admin');
     localStorage.removeItem('password');
@@ -239,20 +238,19 @@ const Navigation = () => {
             <p className={passwordError ? 'error' : 'error__hidden'}>
               Password is 'admin'
             </p>
-            <button
-              onClick={() => {
-                setLoggedIn(true);
-              }}
-              type="submit"
-              disabled={usernameError || passwordError}
-              className="submitButton"
-            >
-              Confirm
-            </button>
+            <div className="paired">
+              <button
+                type="submit"
+                disabled={usernameError || passwordError}
+                className="submitButton"
+              >
+                Confirm
+              </button>
+              <button className="secondaryButton" onClick={cancelLogin}>
+                Cancel
+              </button>
+            </div>
           </form>
-          <button className="secondaryButton" onClick={cancelLogin}>
-            Cancel
-          </button>
         </div>
       </div>
 
