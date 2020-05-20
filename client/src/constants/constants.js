@@ -3,6 +3,8 @@ export const ESTABLISHMENTS_API =
   REACT_APP_BASEURI + '/hotel-booking/get-establishments.php';
 export const ESTABLISHMENT_API =
   REACT_APP_BASEURI + '/hotel-booking/get-establishment.php';
+export const ADD_ESTABLISHMENT_SUCCESS =
+  REACT_APP_BASEURI + '/hotel-booking/add-establishment-success.php';
 export const ENQUIRIES_API =
   REACT_APP_BASEURI + '/hotel-booking/get-enquiries.php';
 export const CONTACT_API =

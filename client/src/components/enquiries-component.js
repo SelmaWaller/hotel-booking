@@ -36,9 +36,7 @@ const EnquiriesComponent = ({
           src={newEnquiry ? visitor_email_icon_white : visitor_email_icon_black}
           alt="icon"
         />
-        <a href={`mailto:${email}`} target="_blank">
-          {email}
-        </a>
+        <a href={`mailto:${email}`}>{email}</a>
       </p>
       <p>
         <img

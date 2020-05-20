@@ -54,7 +54,7 @@ function HotelSpecific({
     }
   };
 
-  const toggleModal = () => {
+  const openModal = () => {
     window.scrollTo(0, 0);
     setModalOpen(!modalOpen);
   };
@@ -266,7 +266,7 @@ function HotelSpecific({
           description={hotel.description}
         />
         <div className="container__inner enquiry-button">
-          <button onClick={toggleModal}>Make enquiry</button>
+          <button onClick={openModal}>Make enquiry</button>
         </div>
 
         <div className="google-map">

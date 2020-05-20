@@ -5,9 +5,9 @@ import trees from '../svgs/trees.svg';
 import {CONTACT_SUCCESS} from '../constants/constants';
 const minMessageChars = 10;
 
-function Contact() {
+export default function Contact() {
   const [responseMessage, setResponseMessage] = useState(false);
-  const [clientNameError, setClientNameError] = useState(true);
+  const [nameError, setNameError] = useState(true);
   const [emailError, setEmailError] = useState(true);
   const [messageError, setMessageError] = useState(true);
   const [count, setCount] = useState(minMessageChars);
@@ -15,18 +15,16 @@ function Contact() {
   let handleChange = (input) => {
     let name = input.target.name;
     let value = input.target.value;
-    let clientNamePattern = /^([a-zæøåA-ZÆØÅ'-]{2,})+(\W{1})+([a-zæøåA-ZÆØÅ '-]{2,})$/;
+    let namePattern = /^([a-zæøåA-ZÆØÅ'-]{2,})+(\W{1})+([a-zæøåA-ZÆØÅ '-]{2,})$/;
     let emailPattern = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
     let messagePattern = /^(.{10,})$/;
 
     switch (name) {
       case 'clientName':
-        clientNamePattern.test(value)
-          ? setClientNameError(false)
-          : setClientNameError(true);
+        setNameError(!namePattern.test(value));
         break;
       case 'email':
-        emailPattern.test(value) ? setEmailError(false) : setEmailError(true);
+        setEmailError(!emailPattern.test(value));
         break;
       case 'message':
         setCount(minMessageChars - value.length);
@@ -56,8 +54,8 @@ function Contact() {
               >
                 <label htmlFor="clientName">Full name</label>
                 <input onChange={handleChange} type="text" name="clientName" />
-                <p className={clientNameError ? 'error' : 'error__hidden'}>
-                  Please enter your first and last name
+                <p className={nameError ? 'error' : 'error__hidden'}>
+                  No invalid characters
                 </p>
                 <label htmlFor="email">Email Address</label>
                 <input onChange={handleChange} type="text" name="email" />
@@ -72,7 +70,7 @@ function Contact() {
                   cols="80"
                 ></textarea>
                 <p className={messageError ? 'error' : 'error__hidden'}>
-                  {count} more characters required
+                  Requires {count} more characters
                 </p>
                 <div className="paired">
                   <button type="submit">Submit</button>
@@ -93,5 +91,3 @@ function Contact() {
     </>
   );
 }
-
-export default Contact;

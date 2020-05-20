@@ -1,0 +1,49 @@
+.new-establishment,
+.new-establishment__blur {
+  button {
+    margin-top: 10px;
+  }
+
+  h1 {
+    @include calcRem(22);
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: -5px;
+  }
+
+  .card {
+    box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
+    min-height: 300px;
+
+    .my-establishments {
+      display: flex;
+      p {
+        padding-left: 10px;
+        margin: 3px 0;
+        @include calcRem(15);
+        left: 0;
+      }
+
+      .hotel-image {
+        margin-top: 5px;
+        width: 130px;
+        height: 180px;
+        left: 0;
+        img {
+          width: 300%;
+        }
+      }
+    }
+    .description {
+      margin-top: 5px;
+      @include calcRem(15);
+      max-width: 500px;
+    }
+  }
+
+  &__blur {
+    filter: blur(30px);
+    overflow: hidden;
+    max-height: 173vh;
+  }
+}
