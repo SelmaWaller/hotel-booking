@@ -6,9 +6,11 @@ import {CONTACT_SUCCESS} from '../constants/constants';
 const minMessageChars = 10;
 
 export default function Contact() {
-  const [responseMessage, setResponseMessage] = useState(false);
+  const [name, setName] = useState('');
   const [nameError, setNameError] = useState(true);
+  const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(true);
+  const [message, setMessage] = useState('');
   const [messageError, setMessageError] = useState(true);
   const [count, setCount] = useState(minMessageChars);
 
@@ -22,13 +24,16 @@ export default function Contact() {
     switch (name) {
       case 'clientName':
         setNameError(!namePattern.test(value));
+        setName(value);
         break;
       case 'email':
         setEmailError(!emailPattern.test(value));
+        setEmail(value);
         break;
       case 'message':
         setCount(minMessageChars - value.length);
         setMessageError(!messagePattern.test(value));
+        setMessage(value);
         break;
       default:
         break;
@@ -49,7 +54,9 @@ export default function Contact() {
                 method="POST"
                 action={CONTACT_SUCCESS}
                 onSubmit={() => {
-                  alert('*receipt popup*');
+                  alert(
+                    `Message successfully sent \n\nName: ${name} \nEmail: ${email} \nMessage: ${message} \n\nThank you!`
+                  );
                 }}
               >
                 <label htmlFor="clientName">Full name</label>
@@ -74,13 +81,6 @@ export default function Contact() {
                 </p>
                 <div className="paired">
                   <button type="submit">Submit</button>
-                  <p
-                    className={
-                      responseMessage ? 'response' : 'response__hidden'
-                    }
-                  >
-                    Message sent!
-                  </p>
                 </div>
               </form>
             </div>

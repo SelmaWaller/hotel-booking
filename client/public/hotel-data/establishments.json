@@ -156,8 +156,8 @@
     "id": 13
   },
   {
-    "establishmentName": "Innsjø Hus",
-    "establishmentEmail": "enquiries@innsjøhus.no",
+    "establishmentName": "Innsj\u00f8 Hus",
+    "establishmentEmail": "enquiries@innsj\u00f8hus.no",
     "imageUrl": "https://images.unsplash.com/photo-1469394576569-858815b13427?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=849&q=80",
     "price": 200,
     "maxGuests": 8,

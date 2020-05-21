@@ -5,7 +5,7 @@ import ReactLoading from 'react-loading';
 import cabin_mobile from '../../images/cabin_mobile.png';
 import {
   ESTABLISHMENTS_API,
-  ADD_ESTABLISHMENT_SUCCESS,
+  ADD_ESTABLISHMENTS_SUCCESS,
 } from '../../constants/constants';
 import MyEstablishments from '../../components/my-establishments';
 
@@ -14,14 +14,23 @@ const minChars = 20;
 export default function Establishments() {
   const [modalOpen, setModalOpen] = useState(true);
   const [establishments, setEstablishments] = useState([]);
+  const [name, setName] = useState('');
   const [nameError, setNameError] = useState(true);
+  const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(true);
+  const [image, setImage] = useState('');
   const [imageError, setImageError] = useState(true);
+  const [price, setPrice] = useState('');
   const [priceError, setPriceError] = useState(true);
+  const [guests, setGuests] = useState(true);
   const [guestError, setGuestError] = useState(true);
+  const [googleLat, setGoogleLat] = useState('');
   const [googleLatError, setGoogleLatError] = useState(true);
+  const [googleLng, setGoogleLng] = useState('');
   const [googleLngError, setGoogleLngError] = useState(true);
+  const [description, setDescription] = useState('');
   const [descriptionError, setDescriptionError] = useState(true);
+  const [switchButton, setSwitchButton] = useState(true);
   const [count, setCount] = useState(minChars);
 
   useEffect(() => {
@@ -35,35 +44,43 @@ export default function Establishments() {
     let value = input.target.value;
     let namePattern = /^([a-zæøåA-ZÆØÅ ]{3,})$/;
     let emailPattern = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
-    let imagePattern = /^(http)+(.{10,})+\.([A-Za-z]{2,3})$/;
-    let coordinatesPattern = /^([0-9]{1})+\.([0-9]{5,})$/;
+    let imagePattern = /^(http)\S*$/;
+    let coordinatesPattern = /^([0-9]{1,2})+\.([0-9]{5,})$/;
     let descriptionPattern = /^(.{20,})$/;
 
     switch (name) {
       case 'establishmentName':
         setNameError(!namePattern.test(value));
+        setName(value);
         break;
       case 'establishmentEmail':
         setEmailError(!emailPattern.test(value));
+        setEmail(value);
         break;
       case 'imageUrl':
         setImageError(!imagePattern.test(value));
+        setImage(value);
         break;
       case 'price':
         setPriceError(!value > 1);
+        setPrice(value);
         break;
       case 'maxGuests':
         setGuestError(!value > 1);
+        setGuests(value);
         break;
       case 'googleLat':
         setGoogleLatError(!coordinatesPattern.test(value));
+        setGoogleLat(value);
         break;
       case 'googleLong':
         setGoogleLngError(!coordinatesPattern.test(value));
+        setGoogleLng(value);
         break;
       case 'description':
         setCount(minChars - value.length);
         setDescriptionError(!descriptionPattern.test(value));
+        setDescription(value);
         break;
       default:
         break;
@@ -79,6 +96,10 @@ export default function Establishments() {
     setModalOpen(false);
   };
 
+  let toggleSwitch = () => {
+    setSwitchButton(!switchButton);
+  };
+
   return (
     <>
       <div className={modalOpen ? 'modal' : 'modal__closed'}>
@@ -89,9 +110,13 @@ export default function Establishments() {
         <div className="form">
           <form
             method="POST"
-            action={ADD_ESTABLISHMENT_SUCCESS}
+            action={ADD_ESTABLISHMENTS_SUCCESS}
             onSubmit={() => {
-              alert('*receipt popup*');
+              alert(
+                `Establishment successfully published \n\nEstablishment: ${name} \nEmail: ${email} \nImage URL: ${image} \nPrice: ${price} \nGuests: ${guests} \nLatitude: ${googleLat} \nLongitude: ${googleLng} \nDescription: ${description} \nSelf-catering: ${
+                  switchButton ? 'Yes' : 'No'
+                }`
+              );
             }}
           >
             <div className="title">
@@ -117,7 +142,9 @@ export default function Establishments() {
             </p>
             <label htmlFor="imageUrl">Image URL</label>
             <input onChange={handleChange} type="text" name="imageUrl" />
-            <p className={'error'}>Accommodation image is required</p>
+            <p className={imageError ? 'error' : 'error__hidden'}>
+              Must be a valid URL
+            </p>
             <label htmlFor="price">Price per night</label>
             <input
               onChange={handleChange}
@@ -163,12 +190,32 @@ export default function Establishments() {
             </p>
             <label htmlFor="selfCatering">Self-catering</label>
             <div className="switch">
-              <input
-                onChange={handleChange}
-                type="checkbox"
-                name="selfCatering"
-              />
-              <div className="switchThumb"></div>
+              <div
+                className={switchButton ? 'switch__on' : 'switch__on--hidden'}
+              >
+                <input
+                  onClick={toggleSwitch}
+                  type="radio"
+                  name="selfCatering"
+                  value={false}
+                />
+                <span>Yes</span>
+                <div className="switchThumb"></div>
+              </div>
+
+              <div
+                className={switchButton ? 'switch__off--hidden' : 'switch__off'}
+              >
+                <input
+                  onClick={toggleSwitch}
+                  type="radio"
+                  name="selfCatering"
+                  value={true}
+                  defaultChecked={true}
+                />
+                <span>No</span>
+                <div className="switchThumb"></div>
+              </div>
             </div>
             <label htmlFor="id">ID</label>
             <input onChange={handleChange} type="number" min="8" max="8" />

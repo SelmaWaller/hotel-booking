@@ -47,3 +47,51 @@
     max-height: 173vh;
   }
 }
+
+.switch {
+  .switch__on,
+  .switch__on--hidden,
+  .switch__off,
+  .switch__off--hidden {
+    position: relative;
+    input {
+      width: 70px;
+    }
+  }
+  &__on {
+    input {
+      background: $brand-orange;
+    }
+    span {
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      color: $brand-white;
+      pointer-events: none;
+    }
+    &--hidden {
+      display: none;
+    }
+    .switchThumb {
+      position: absolute;
+      top: 8px;
+      left: 43px;
+    }
+  }
+  &__off {
+    span {
+      position: absolute;
+      top: 4px;
+      right: 20px;
+      color: $brand-white;
+      pointer-events: none;
+    }
+    &--hidden {
+      display: none;
+    }
+    .switchThumb {
+      position: absolute;
+      top: 8px;
+    }
+  }
+}
