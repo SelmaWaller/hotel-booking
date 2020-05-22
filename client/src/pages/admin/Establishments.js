@@ -152,7 +152,7 @@ export default function Establishments() {
                 type="number"
                 name="price"
                 min="1"
-                max="500"
+                max="999"
                 defaultValue="20"
                 onChange={handleChange}
               />

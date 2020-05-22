@@ -80,7 +80,12 @@ export default function Contact() {
                   Requires {count} more characters
                 </p>
                 <div className="paired">
-                  <button type="submit">Submit</button>
+                  <button
+                    type="submit"
+                    disabled={nameError || emailError || messageError}
+                  >
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>

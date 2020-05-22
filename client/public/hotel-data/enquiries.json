@@ -1,1 +1,12 @@
-[{"establishment":"Sunset Beach","clientName":"Mike Tindall","email":"miket@gmail.com","checkin":"2019-05-03","checkout":"2019-05-05","adults":"","children":"","notes":""},{"establishment":"Home from Home","clientName":"Selma Waller","email":"selmawaller@gmail.com","checkin":"2020-05-19","checkout":"2020-05-21","adults":"2","children":"2","notes":"blabla?"},{"establishment":"Sunset Beach","clientName":"Selma Waller","email":"selmawaller@gmail.com","checkin":"2020-05-19","checkout":"2020-05-22","adults":"2","children":"0","notes":""},{"establishment":"Adam's Place","clientName":"Selma Waller","email":"selmawaller@gmail.com","checkin":"2020-05-22","checkout":"2020-05-24","adults":"1","children":"0","notes":"unchecked adults 08:40"}]
+[
+  {
+    "establishment": "Sunset Beach",
+    "clientName": "Mike Tindall",
+    "email": "miket@gmail.com",
+    "checkin": "2019-05-03",
+    "checkout": "2019-05-05",
+    "adults": "",
+    "children": "",
+    "notes": ""
+  }
+]
