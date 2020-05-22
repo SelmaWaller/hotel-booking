@@ -140,6 +140,9 @@ const Navigation = () => {
                       localStorage.removeItem('admin');
                       localStorage.removeItem('password');
                       localStorage.removeItem('token');
+                      if (/admin/.test(window.location.href)) {
+                        window.location = '/';
+                      }
                     }
                   : () => {
                       setLoginInfo(true);

@@ -48,50 +48,139 @@
   }
 }
 
-.switch {
-  .switch__on,
-  .switch__on--hidden,
-  .switch__off,
-  .switch__off--hidden {
+.modal {
+  .description {
+    position: relative;
+    margin-bottom: 5px;
+
+    ::-webkit-scrollbar-corner,
+    ::-webkit-resizer,
+    ::-webkit-scrollbar-track {
+      background: none;
+      border: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: $brand-orange-light;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: $brand-orange-medium-light;
+    }
+    p {
+      bottom: 0px;
+      right: 10px;
+      position: absolute;
+    }
+
+    .limit {
+      color: rgba($brand-orange-medium-light, 0.8);
+      font-size: 0.9375rem;
+      margin-top: -2px;
+      margin-bottom: 15px;
+      transition: 200ms ease;
+
+      &__over {
+        color: rgb(255, 104, 104);
+      }
+    }
+  }
+
+  .switch {
+    .switch__on,
+    .switch__on--hidden,
+    .switch__off,
+    .switch__off--hidden {
+      position: relative;
+      input {
+        cursor: pointer;
+        width: 70px;
+      }
+    }
+    &__on {
+      input {
+        background: $brand-orange;
+      }
+      span {
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        color: $brand-white;
+        pointer-events: none;
+      }
+      &--hidden {
+        display: none;
+      }
+      .switchThumb {
+        position: absolute;
+        top: 8px;
+        left: 43px;
+      }
+    }
+    &__off {
+      span {
+        position: absolute;
+        top: 4px;
+        right: 20px;
+        color: $brand-white;
+        pointer-events: none;
+      }
+      &--hidden {
+        display: none;
+      }
+      .switchThumb {
+        position: absolute;
+        top: 8px;
+      }
+    }
+  }
+
+  .id {
+    margin-bottom: -35px;
+    display: flex;
+    align-items: center;
+    input {
+      background: none;
+      border: none;
+      width: 20px;
+      padding-left: 5px;
+    }
+  }
+
+  .small-input {
     position: relative;
     input {
-      width: 70px;
+      padding-left: 25px;
+      display: block;
+      max-width: 25px;
     }
-  }
-  &__on {
-    input {
-      background: $brand-orange;
-    }
+
     span {
+      @include calcRem(18);
       position: absolute;
-      top: 4px;
-      left: 5px;
-      color: $brand-white;
-      pointer-events: none;
+      top: 34px;
+      left: 10px;
     }
-    &--hidden {
-      display: none;
-    }
-    .switchThumb {
-      position: absolute;
-      top: 8px;
-      left: 43px;
-    }
-  }
-  &__off {
-    span {
-      position: absolute;
-      top: 4px;
-      right: 20px;
-      color: $brand-white;
-      pointer-events: none;
-    }
-    &--hidden {
-      display: none;
-    }
-    .switchThumb {
-      position: absolute;
-      top: 8px;
+
+    &__guests {
+      position: relative;
+      input {
+        display: block;
+        max-width: 40px;
+      }
+      img {
+        position: absolute;
+        max-width: 11px;
+        top: 37px;
+        left: 42px;
+        border-radius: 0;
+        opacity: 0.6;
+      }
     }
   }
 }

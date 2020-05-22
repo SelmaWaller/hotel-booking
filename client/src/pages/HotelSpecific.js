@@ -25,13 +25,15 @@ function HotelSpecific({
 
   const [clientNameError, setClientNameError] = useState(true);
   const [emailError, setEmailError] = useState(true);
-  const [adultGuests, setAdultGuests] = useState(null);
-  const [childGuests, setChildGuests] = useState(null);
+  const [adultGuests, setAdultGuests] = useState(1);
+  const [childGuests, setChildGuests] = useState(0);
 
   useEffect(() => {
-    axios.get(ESTABLISHMENT_API + `?id=${id}`).then((hotelResult) => {
-      setHotel(hotelResult.data);
-    });
+    axios
+      .get(ESTABLISHMENT_API + `?id=${parseFloat(id)}`)
+      .then((hotelResult) => {
+        setHotel(hotelResult.data);
+      });
   }, [id]);
 
   let handleChange = (input) => {
@@ -42,12 +44,10 @@ function HotelSpecific({
 
     switch (name) {
       case 'clientName':
-        clientNamePattern.test(value)
-          ? setClientNameError(false)
-          : setClientNameError(true);
+        setClientNameError(!clientNamePattern.test(value));
         break;
       case 'email':
-        emailPattern.test(value) ? setEmailError(false) : setEmailError(true);
+        setEmailError(!emailPattern.test(value));
         break;
       default:
         break;
@@ -162,7 +162,7 @@ function HotelSpecific({
                       name="adults"
                       min="1"
                       max="20"
-                      value={adultGuests ? adultGuests : 1}
+                      value={adultGuests}
                       readOnly
                     />
                     <button
@@ -202,7 +202,7 @@ function HotelSpecific({
                       name="children"
                       min="0"
                       max="20"
-                      value={childGuests ? childGuests : 0}
+                      value={childGuests}
                       readOnly
                     />
                     <button

@@ -37,7 +37,8 @@ textarea {
   max-width: 100%;
   width: 100%;
   letter-spacing: 0.5px;
-  cursor: pointer;
+  cursor: text;
+  resize: none;
 
   &:focus {
     outline-color: $brand-orange-light;
