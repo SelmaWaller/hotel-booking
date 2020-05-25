@@ -7,7 +7,6 @@ import {CONTACT_API} from '../../constants/constants';
 
 export default function Messages() {
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState(true);
 
   useEffect(() => {
     axios.get(CONTACT_API).then((messages) => {
@@ -15,9 +14,6 @@ export default function Messages() {
     });
   }, []);
 
-  let readMessage = () => {
-    setNewMessage(false);
-  };
   return (
     <div className="enquiries-and-messages">
       <div className="container__inner">
@@ -27,18 +23,12 @@ export default function Messages() {
         {messages ? (
           messages.map((message, index) => {
             return (
-              <div
-                className={newMessage ? 'card' : 'card__read'}
+              <MessagesComponent
                 key={index}
-                onClick={readMessage}
-              >
-                <MessagesComponent
-                  key={index}
-                  name={message.clientName}
-                  email={message.email}
-                  message={message.message}
-                />
-              </div>
+                name={message.clientName}
+                email={message.email}
+                message={message.message}
+              />
             );
           })
         ) : (
@@ -53,7 +43,6 @@ export default function Messages() {
             </div>
           </>
         )}
-        <div className="card"></div>
       </div>
     </div>
   );

@@ -35,15 +35,13 @@ const SingleHotel = ({
             <div className="paired">
               <div className="dot"></div>
             </div>
-            {catering ? (
-              <p>Self-Catering</p>
+            {catering === 'true' ? (
+              <p>Self-catering</p>
             ) : (
-              <div className="replace-mail">
-                <a href={`mailto:${email}`}>{email}</a>
-              </div>
+              <p>No self-catering</p>
             )}
           </div>
-          {catering ? <a href={`mailto:${email}`}>{email}</a> : ''}
+          <a href={`mailto:${email}`}>{email}</a>
           <p>{description}</p>
         </div>
       </div>

@@ -1,12 +1,1 @@
-[
-  {
-    "establishment": "Sunset Beach",
-    "clientName": "Mike Tindall",
-    "email": "miket@gmail.com",
-    "checkin": "2019-05-03",
-    "checkout": "2019-05-05",
-    "adults": "",
-    "children": "",
-    "notes": ""
-  }
-]
+[{"establishment":"Sunset Beach","clientName":"Mike Tindall","email":"miket@gmail.com","checkin":"2019-05-03","checkout":"2019-05-05","adults":"","children":"","notes":""},{"establishment":"My apartment","clientName":"Selma Waller","email":"selmawaller@gmail.com","checkin":"2020-05-22","checkout":"2020-05-25","adults":"1","children":"0","notes":""},{"establishment":"Tree Tops","clientName":"Selma Waller","email":"selmawaller@gmail.com","checkin":"2020-05-30","checkout":"2020-05-31","adults":"2","children":"0","notes":""}]

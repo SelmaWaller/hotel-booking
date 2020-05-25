@@ -23,7 +23,7 @@ export default function Establishments() {
   const [imageError, setImageError] = useState(true);
   const [price, setPrice] = useState('');
   const [priceError, setPriceError] = useState(true);
-  const [guests, setGuests] = useState(true);
+  const [guests, setGuests] = useState('');
   const [guestError, setGuestError] = useState(true);
   const [googleLat, setGoogleLat] = useState('');
   const [googleLatError, setGoogleLatError] = useState(true);

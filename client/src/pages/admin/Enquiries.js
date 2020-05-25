@@ -7,7 +7,6 @@ import {ENQUIRIES_API} from '../../constants/constants';
 
 export default function Enquiries() {
   const [enquiries, setEnquiries] = useState([]);
-  const [newEnquiry, setNewEnquiry] = useState(true);
 
   useEffect(() => {
     axios.get(ENQUIRIES_API).then((enquiries) => {
@@ -15,9 +14,6 @@ export default function Enquiries() {
     });
   }, []);
 
-  let readEnquiry = () => {
-    setNewEnquiry(false);
-  };
   return (
     <div className="enquiries-and-messages">
       <div className="container__inner">
@@ -27,24 +23,17 @@ export default function Enquiries() {
         {enquiries ? (
           enquiries.map((enquiry, index) => {
             return (
-              <div
-                className={newEnquiry ? 'card' : 'card__read'}
+              <EnquiriesComponent
                 key={index}
-                onClick={readEnquiry}
-              >
-                <EnquiriesComponent
-                  newEnquiry={newEnquiry}
-                  key={index}
-                  establishment={enquiry.establishment}
-                  name={enquiry.clientName}
-                  email={enquiry.email}
-                  checkin={enquiry.checkin}
-                  checkout={enquiry.checkout}
-                  adults={enquiry.adults}
-                  children={enquiry.children}
-                  notes={enquiry.notes}
-                />
-              </div>
+                establishment={enquiry.establishment}
+                name={enquiry.clientName}
+                email={enquiry.email}
+                checkin={enquiry.checkin}
+                checkout={enquiry.checkout}
+                adults={enquiry.adults}
+                children={enquiry.children}
+                notes={enquiry.notes}
+              />
             );
           })
         ) : (
@@ -59,7 +48,6 @@ export default function Enquiries() {
             </div>
           </>
         )}
-        <div className="card"></div>
       </div>
     </div>
   );
