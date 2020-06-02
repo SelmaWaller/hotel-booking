@@ -193,7 +193,9 @@ export default function Establishments() {
                 cols="80"
                 placeholder="A brief description about the accommodation"
               ></textarea>
-              <p className={charLimit ? 'limit__over' : 'limit'}>{count}</p>
+              <div className="description__limit">
+                <p className={charLimit ? 'limit__over' : 'limit'}>{count}</p>
+              </div>
             </div>
             <label htmlFor="selfCatering">Self-catering</label>
             <div className="switch">

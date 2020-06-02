@@ -22,47 +22,49 @@ export default function Enquiries() {
   }, []);
 
   return (
-    <>
+    <div className="styled-scroll">
       <div className="blur">
         <Illustration />
       </div>
-      <div className="enquiries-and-messages">
+      <div className="enquiries-and-messages container__outer">
         <div className="enquiries">
           <div className="container__inner">
             <h1>Enquiries</h1>
           </div>
-          <div className="admin-grid">
-            {enquiries ? (
-              enquiries.map((enquiry, index) => {
-                return (
-                  <EnquiriesComponent
-                    key={index}
-                    establishment={enquiry.establishment}
-                    name={enquiry.clientName}
-                    email={enquiry.email}
-                    checkin={enquiry.checkin}
-                    checkout={enquiry.checkout}
-                    adults={enquiry.adults}
-                    children={enquiry.children}
-                    notes={enquiry.notes}
-                  />
-                );
-              })
-            ) : (
-              <>
-                <div className="loading-circle">
-                  <ReactLoading
-                    type={'spinningBubbles'}
-                    color={'#ffc69c'}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              </>
-            )}
-          </div>
+          {enquiries ? (
+            enquiries.map((enquiry, index) => {
+              return (
+                <EnquiriesComponent
+                  key={index}
+                  establishment={enquiry.establishment}
+                  name={enquiry.clientName}
+                  email={enquiry.email}
+                  checkin={enquiry.checkin}
+                  checkout={enquiry.checkout}
+                  adults={enquiry.adults}
+                  children={enquiry.children}
+                  notes={enquiry.notes}
+                  time={new Date(enquiry.time)
+                    .toLocaleDateString()
+                    .split('.')
+                    .join('/')}
+                />
+              );
+            })
+          ) : (
+            <>
+              <div className="loading-circle">
+                <ReactLoading
+                  type={'spinningBubbles'}
+                  color={'#ffc69c'}
+                  height={100}
+                  width={100}
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

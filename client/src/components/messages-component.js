@@ -2,7 +2,7 @@ import React from 'react';
 
 const MessagesComponent = ({name, email, message, time}) => {
   return (
-    <div className="card">
+    <div className="received-card">
       <h3>{name}</h3>
       <div className="message-email">
         <p>
@@ -11,7 +11,7 @@ const MessagesComponent = ({name, email, message, time}) => {
       </div>
       <p>{message}</p>
       <div className="timestamp">
-        <p>{time}</p>
+        <p className="date-received">{time}</p>
       </div>
     </div>
   );

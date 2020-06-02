@@ -22,33 +22,38 @@
 }
 @media only screen and (min-width: 600px) and(max-width: 1024px) {
   .header {
-    height: 40vh;
+    margin-left: 50px;
   }
   .illustration {
     .background {
-      background-image: none;
-
       .mountain {
         &__back {
-          background-image: none;
         }
 
         &__middle {
-          background-image: none;
+          width: 900px;
+          right: 65px;
+          bottom: -100px;
         }
         &__front {
-          background-image: none;
+          width: 800px;
+          bottom: 0;
         }
       }
     }
     .shadow {
-      background-image: none;
+      bottom: -50px;
+      opacity: 0.9;
     }
     .trees {
-      background-image: none;
+      width: 750px;
+      left: 10%;
     }
     .birds {
-      background-image: none;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      bottom: 0;
     }
   }
 }
@@ -59,7 +64,7 @@
   .illustration {
     .background {
       background-image: url('../../svgs/background-desktop.svg');
-      background-position: -50px -60px;
+      background-position: -50px 0;
       background-size: cover;
       width: 105%;
       height: 100vh;
@@ -68,7 +73,7 @@
       .mountain {
         &__back {
           background-image: url('../../svgs/mountain_back-desktop.svg');
-          background-position: 0 37%;
+          background-position: 0 0;
           width: 100%;
           animation: none;
         }
@@ -78,7 +83,7 @@
           background-position: 0 0;
           transform: scale(0.9);
           right: -50px;
-          bottom: -50px;
+          bottom: -70px;
           animation: none;
         }
         &__front {
@@ -87,7 +92,7 @@
           left: -50px;
           width: 100%;
           height: 110vh;
-          bottom: 0px;
+          bottom: -50px;
           animation: none;
         }
       }
@@ -101,11 +106,11 @@
     }
     .trees {
       background-image: url('../../svgs/trees-desktop.svg');
-      background-position: 0 0;
-      width: 120%;
-      height: 160%;
-      bottom: -198px;
-      left: -400px;
+      background-position: 50% 0;
+      width: 105%;
+      height: 120%;
+      bottom: -155px;
+      left: -80px;
       transform: scale(0.7);
       animation: none;
     }

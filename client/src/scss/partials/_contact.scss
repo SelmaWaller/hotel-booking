@@ -7,22 +7,24 @@
 }
 
 .contact {
-  margin: 10px 0;
+  max-width: 700px;
+  margin: 20px auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 90vh;
 
   &__background {
     position: relative;
     overflow: hidden;
+    min-height: 750px;
     margin: 20px;
     width: 100%;
-    min-height: 90vh;
     background: $brand-white;
     border-radius: 10px;
     input,
     textarea {
-      max-width: 92%;
+      max-width: 93%;
       margin-bottom: 5px;
       margin-top: 5px;
     }
@@ -64,9 +66,10 @@
 
     img {
       width: 120%;
+      max-width: 600px;
       position: absolute;
       bottom: -2px;
-      left: -20px;
+      left: 5%;
       pointer-events: none;
     }
   }

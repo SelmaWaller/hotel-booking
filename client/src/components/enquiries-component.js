@@ -14,9 +14,10 @@ const EnquiriesComponent = ({
   adults,
   children,
   notes,
+  time,
 }) => {
   return (
-    <div className="card">
+    <div className="received-card">
       <div className="received-enquiries">
         <h3>
           <img src={home_icon_black} alt="icon" />
@@ -47,6 +48,7 @@ const EnquiriesComponent = ({
         <p>
           <span>Notes:</span> {notes ? notes : ''}
         </p>
+        <p className="date-received">{time}</p>
       </div>
     </div>
   );

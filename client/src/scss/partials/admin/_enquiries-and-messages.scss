@@ -1,37 +1,55 @@
+.styled-scroll {
+  ::-webkit-scrollbar-corner,
+  ::-webkit-resizer,
+  ::-webkit-scrollbar-track {
+    background: none;
+    border: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $brand-orange-light;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $brand-orange-medium-light;
+  }
+}
+
 .enquiries-and-messages {
-  min-height: 100vh;
+  overflow: auto;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  background: $brand-white;
+  border-radius: 10px;
+
   h1 {
     @include calcRem(28);
     font-weight: 500;
-    margin: 0;
+    margin-top: 5px;
+  }
+  .enquiries,
+  .messages {
   }
 
-  @supports (display: grid) {
-    .admin-grid {
-      max-width: 2000px;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-  }
-
-  .enquiries {
-    margin: 20px;
-    background: rgba($brand-white, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
-  }
-
-  .card {
+  .received-card {
     padding: 0 10px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
-    border-radius: 5px;
+    margin: 15px 10px;
     transition: 200ms ease;
     background: $brand-white;
     color: $brand-black;
     position: relative;
+    border-top: 1px solid $brand-grey;
 
+    .date-received {
+      color: $brand-orange;
+    }
     .received-enquiries {
       p {
         margin: 0;
@@ -94,12 +112,6 @@
       &:nth-last-child(1) {
         margin-bottom: 12px;
       }
-    }
-    .timestamp {
-      padding: 0 10px;
-      position: absolute;
-      top: 10px;
-      right: 10px;
     }
   }
 }
