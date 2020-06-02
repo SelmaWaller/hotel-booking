@@ -1,8 +1,9 @@
 .enquiries-and-messages {
+  min-height: 100vh;
   h1 {
     @include calcRem(28);
     font-weight: 500;
-    margin-bottom: 0;
+    margin: 0;
   }
 
   @supports (display: grid) {
@@ -10,18 +11,35 @@
       max-width: 2000px;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, 350px);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+  }
+
+  .enquiries {
+    margin: 20px;
+    background: rgba($brand-white, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
   }
 
   .card {
     padding: 0 10px;
-    margin: 15px 10px;
+    margin: 10px;
     box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
     border-radius: 5px;
     transition: 200ms ease;
     background: $brand-white;
     color: $brand-black;
+    position: relative;
+
+    .received-enquiries {
+      p {
+        margin: 0;
+      }
+    }
+    p {
+      padding: 0 0 10px;
+    }
 
     a {
       color: $brand-black;
@@ -31,6 +49,7 @@
       margin-bottom: 20px;
       p {
         margin-top: -8px;
+        padding-bottom: 0;
       }
     }
 
@@ -75,6 +94,12 @@
       &:nth-last-child(1) {
         margin-bottom: 12px;
       }
+    }
+    .timestamp {
+      padding: 0 10px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
     }
   }
 }

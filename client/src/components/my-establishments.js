@@ -9,10 +9,11 @@ const MyEstablishments = ({
   catering,
   lat,
   lng,
+  id,
   description,
 }) => {
   return (
-    <>
+    <div className="container__inner">
       <div className="my-establishments">
         <div className="hotel-image">
           <img src={img} alt={name} />
@@ -46,10 +47,14 @@ const MyEstablishments = ({
             <span>Longitude: </span>
             {lng}
           </p>
+          <p>
+            <span>ID: </span>
+            {id}
+          </p>
         </div>
       </div>
       <p className="description">{description}</p>
-    </>
+    </div>
   );
 };
 

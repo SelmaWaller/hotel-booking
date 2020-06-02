@@ -9,10 +9,13 @@ body {
 }
 
 .container {
-  max-width: 2000px;
   padding: 0;
   z-index: -1;
 
+  &__outer {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
   &__inner {
     padding: 10px;
   }
@@ -20,12 +23,6 @@ body {
 
 .paired {
   display: flex;
-}
-
-.hotel-details {
-  margin-top: -10px;
-  display: flex;
-  align-items: center;
 }
 
 input,
@@ -108,7 +105,7 @@ button {
     max-width: 2000px;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -123,7 +120,8 @@ button {
 }
 
 .card {
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
   margin: 15px 0 0;
   padding: 5px 0;
   overflow: hidden;
@@ -135,6 +133,7 @@ button {
 }
 
 .switch {
+  cursor: pointer;
   display: flex;
   position: relative;
 
@@ -201,7 +200,8 @@ button {
 }
 
 .google-map {
-  margin-bottom: 300px;
+  margin-top: 20px;
+  margin-bottom: 260px;
   .google-hotel-info {
     h3,
     h4 {

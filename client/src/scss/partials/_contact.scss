@@ -17,7 +17,7 @@
     overflow: hidden;
     margin: 20px;
     width: 100%;
-    min-height: 87vh;
+    min-height: 90vh;
     background: $brand-white;
     border-radius: 10px;
     input,
@@ -68,6 +68,21 @@
       bottom: -2px;
       left: -20px;
       pointer-events: none;
+    }
+  }
+  .id {
+    margin-top: -32px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: $brand-grey;
+    input {
+      color: $brand-grey;
+      background: none;
+      border: none;
+      width: 20px;
+      padding-left: 5px;
+      outline: none;
     }
   }
 }

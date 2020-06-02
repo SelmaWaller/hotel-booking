@@ -17,7 +17,7 @@ export default function Contact() {
   let handleChange = (input) => {
     let name = input.target.name;
     let value = input.target.value;
-    let namePattern = /^([a-zæøåA-ZÆØÅ'-]{2,})+(\W{1})+([a-zæøåA-ZÆØÅ '-]{2,})$/;
+    let namePattern = /^([a-zA-Z-æøåÆØÅ']{2,})+([ ]{1})+([a-zæøåA-ZÆØÅ '-]{2,})$/;
     let emailPattern = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
     let messagePattern = /^(.{10,})$/;
 
@@ -39,58 +39,63 @@ export default function Contact() {
         break;
     }
   };
-
   return (
     <>
       <div className="blur">
         <Illustration />
       </div>
-      <div className="contact">
-        <div className="contact__background">
-          <div className="container__inner">
-            <h1>Contact</h1>
-            <div className="form">
-              <form
-                method="POST"
-                action={CONTACT_SUCCESS}
-                onSubmit={() => {
-                  alert(
-                    `Message successfully sent \n\nName: ${name} \nEmail: ${email} \nMessage: ${message} \n\nThank you!`
-                  );
-                }}
-              >
-                <label htmlFor="clientName">Full name</label>
-                <input onChange={handleChange} type="text" name="clientName" />
-                <p className={nameError ? 'error' : 'error__hidden'}>
-                  No invalid characters
-                </p>
-                <label htmlFor="email">Email Address</label>
-                <input onChange={handleChange} type="text" name="email" />
-                <p className={emailError ? 'error' : 'error__hidden'}>
-                  Must be a valid email address
-                </p>
-                <label htmlFor="message">Message</label>
-                <textarea
-                  onChange={handleChange}
-                  name="message"
-                  rows="8"
-                  cols="80"
-                ></textarea>
-                <p className={messageError ? 'error' : 'error__hidden'}>
-                  Requires {count} more characters
-                </p>
-                <div className="paired">
+      <div className="container__outer">
+        <div className="contact">
+          <div className="contact__background">
+            <div className="container__inner">
+              <h1>Contact</h1>
+              <div className="form">
+                <form
+                  method="POST"
+                  action={CONTACT_SUCCESS}
+                  onSubmit={() => {
+                    alert(
+                      `Message successfully sent \n\nName: ${name} \nEmail: ${email} \nMessage: ${message} \n\nThank you!`
+                    );
+                  }}
+                >
+                  <label htmlFor="clientName">Full name</label>
+                  <input
+                    onChange={handleChange}
+                    type="text"
+                    name="clientName"
+                  />
+                  <p className={nameError ? 'error' : 'error__hidden'}>
+                    First and last name is required
+                  </p>
+                  <label htmlFor="email">Email Address</label>
+                  <input onChange={handleChange} type="text" name="email" />
+                  <p className={emailError ? 'error' : 'error__hidden'}>
+                    Must be a valid email address
+                  </p>
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    onChange={handleChange}
+                    name="message"
+                    rows="8"
+                    cols="80"
+                  ></textarea>
+                  <p className={messageError ? 'error' : 'error__hidden'}>
+                    Requires {count} more characters
+                  </p>
                   <button
+                    name="time"
+                    value={new Date()}
                     type="submit"
                     disabled={nameError || emailError || messageError}
                   >
                     Submit
                   </button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
+            <img src={trees} alt="illustration" />
           </div>
-          <img src={trees} alt="illustration" />
         </div>
       </div>
     </>

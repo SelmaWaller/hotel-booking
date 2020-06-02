@@ -8,6 +8,7 @@ class Enquiry
     public $email;
     public $checkin;
     public $checkout;
+    public $time;
 }
 
 //Creates new enquiry and sets properties
@@ -20,6 +21,7 @@ $newEnquiry->checkout = $_POST["checkout"];
 $newEnquiry->adults = $_POST["adults"];
 $newEnquiry->children = $_POST["children"];
 $newEnquiry->notes = $_POST["notes"];
+$newEnquiry->time = $_POST["time"];
 
 //Adds object to array
 $enquiriesList = file_get_contents('client/public/hotel-data/enquiries.json');

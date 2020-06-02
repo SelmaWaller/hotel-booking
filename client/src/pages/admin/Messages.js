@@ -10,7 +10,13 @@ export default function Messages() {
 
   useEffect(() => {
     axios.get(CONTACT_API).then((messages) => {
-      setMessages(messages.data);
+      setMessages(
+        messages.data.sort(function (newer, older) {
+          return (
+            new Date(older.time).getTime() - new Date(newer.time).getTime()
+          );
+        })
+      );
     });
   }, []);
 
@@ -28,6 +34,10 @@ export default function Messages() {
                 name={message.clientName}
                 email={message.email}
                 message={message.message}
+                time={new Date(message.time)
+                  .toLocaleDateString()
+                  .split('.')
+                  .join('/')}
               />
             );
           })

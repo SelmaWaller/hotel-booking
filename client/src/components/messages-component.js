@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MessagesComponent = ({name, email, message}) => {
+const MessagesComponent = ({name, email, message, time}) => {
   return (
     <div className="card">
       <h3>{name}</h3>
@@ -10,6 +10,9 @@ const MessagesComponent = ({name, email, message}) => {
         </p>
       </div>
       <p>{message}</p>
+      <div className="timestamp">
+        <p>{time}</p>
+      </div>
     </div>
   );
 };

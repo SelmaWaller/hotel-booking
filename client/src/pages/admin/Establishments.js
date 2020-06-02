@@ -224,16 +224,9 @@ export default function Establishments() {
                 <div className="switchThumb"></div>
               </div>
             </div>
-            <div className="id">
-              <label htmlFor="id">ID:</label>
-              <input
-                type="text"
-                name="id"
-                value={establishments.length + 1}
-                readOnly
-              />
-            </div>
             <button
+              name="id"
+              value={establishments.length + 1}
               type="submit"
               disabled={
                 nameError ||
@@ -275,6 +268,7 @@ export default function Establishments() {
                         catering={establishment.selfCatering}
                         lat={establishment.googleLat}
                         lng={establishment.googleLong}
+                        id={establishment.id}
                         description={establishment.description}
                       />
                     </div>

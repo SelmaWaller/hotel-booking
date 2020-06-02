@@ -19,7 +19,7 @@ const SingleHotel = ({
         </div>
         <h1>{name}</h1>
       </div>
-      <div className="container__inner">
+      <div className="container__inner container__outer">
         <div className="hotel-details">
           <div className="paired">
             <div className="paired">

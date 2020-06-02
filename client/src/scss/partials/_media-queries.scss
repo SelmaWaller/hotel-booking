@@ -1,0 +1,121 @@
+@media only screen and(min-width: 500px) {
+  .hotel-cards {
+    margin: 0 10px;
+  }
+  .specific .header-area .hotel-image img {
+    width: 100%;
+  }
+  .Collapsible .filter-box .slider-container .slider__thumb {
+    @include calcRem(16);
+    width: 32px;
+    height: 32px;
+    padding: 9px 6px 0 4px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      transform: translateY(0) scale(1);
+      padding-top: 9px;
+      height: 32px;
+    }
+  }
+}
+@media only screen and (min-width: 600px) and(max-width: 1024px) {
+  .header {
+    height: 40vh;
+  }
+  .illustration {
+    .background {
+      background-image: none;
+
+      .mountain {
+        &__back {
+          background-image: none;
+        }
+
+        &__middle {
+          background-image: none;
+        }
+        &__front {
+          background-image: none;
+        }
+      }
+    }
+    .shadow {
+      background-image: none;
+    }
+    .trees {
+      background-image: none;
+    }
+    .birds {
+      background-image: none;
+    }
+  }
+}
+@media only screen and(min-width: 1024px) {
+  .header {
+    padding-left: 100px;
+  }
+  .illustration {
+    .background {
+      background-image: url('../../svgs/background-desktop.svg');
+      background-position: -50px -60px;
+      background-size: cover;
+      width: 105%;
+      height: 100vh;
+      animation: none;
+
+      .mountain {
+        &__back {
+          background-image: url('../../svgs/mountain_back-desktop.svg');
+          background-position: 0 37%;
+          width: 100%;
+          animation: none;
+        }
+
+        &__middle {
+          background-image: url('../../svgs/mountain_middle-desktop.svg');
+          background-position: 0 0;
+          transform: scale(0.9);
+          right: -50px;
+          bottom: -50px;
+          animation: none;
+        }
+        &__front {
+          background-image: url('../../svgs/mountain_front-desktop.svg');
+          background-position: 0 0;
+          left: -50px;
+          width: 100%;
+          height: 110vh;
+          bottom: 0px;
+          animation: none;
+        }
+      }
+    }
+    .shadow {
+      background-image: url('../../svgs/shadow-desktop.svg');
+      bottom: 0px;
+      width: 100%;
+      height: 300px;
+      animation: none;
+    }
+    .trees {
+      background-image: url('../../svgs/trees-desktop.svg');
+      background-position: 0 0;
+      width: 120%;
+      height: 160%;
+      bottom: -198px;
+      left: -400px;
+      transform: scale(0.7);
+      animation: none;
+    }
+    .birds {
+      background-image: url('../../svgs/birds-desktop.svg');
+      background-position: 0 0;
+      width: 100%;
+      left: -120px;
+      bottom: 180px;
+      animation: none;
+    }
+  }
+}

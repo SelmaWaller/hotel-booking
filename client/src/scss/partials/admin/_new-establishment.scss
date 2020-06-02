@@ -15,6 +15,10 @@
     box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
     min-height: 300px;
 
+    .container__inner {
+      padding: 0 10px;
+    }
+
     .my-establishments {
       display: flex;
       p {
@@ -26,18 +30,24 @@
 
       .hotel-image {
         margin-top: 5px;
-        width: 130px;
-        height: 180px;
+        width: 100%;
+        max-height: 215px;
         left: 0;
+        justify-content: left;
         img {
           width: 300%;
         }
       }
     }
     .description {
-      margin-top: 5px;
+      word-break: break-word;
+      padding: 0;
+      margin-top: 10px;
       @include calcRem(15);
       max-width: 500px;
+    }
+    button {
+      margin-bottom: 5px;
     }
   }
 
@@ -149,6 +159,7 @@
       border: none;
       width: 20px;
       padding-left: 5px;
+      outline: none;
     }
   }
 

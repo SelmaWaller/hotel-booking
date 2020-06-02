@@ -6,6 +6,7 @@ class Message
     public $clientName;
     public $email;
     public $message;
+    public $time;
 }
 
 //Creates new message and sets properties
@@ -13,6 +14,7 @@ $newMessage = new Message();
 $newMessage->clientName = $_POST["clientName"];
 $newMessage->email = $_POST["email"];
 $newMessage->message = $_POST["message"];
+$newMessage->time = $_POST["time"];
 
 //Adds object to array
 $messagesList = file_get_contents('client/public/hotel-data/contact.json');

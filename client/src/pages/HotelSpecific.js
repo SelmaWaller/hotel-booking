@@ -39,12 +39,12 @@ function HotelSpecific({
   let handleChange = (input) => {
     let name = input.target.name;
     let value = input.target.value;
-    let clientNamePattern = /^([a-zæøåA-ZÆØÅ'-]{2,})+\W+([a-zæøåA-ZÆØÅ '-]{2,})$/;
+    let namePattern = /^([a-zA-Z-æøåÆØÅ']{2,})+([ ]{1})+([a-zæøåA-ZÆØÅ '-]{2,})$/;
     let emailPattern = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
 
     switch (name) {
       case 'clientName':
-        setClientNameError(!clientNamePattern.test(value));
+        setClientNameError(!namePattern.test(value));
         break;
       case 'email':
         setEmailError(!emailPattern.test(value));
@@ -245,6 +245,8 @@ function HotelSpecific({
             </div>
 
             <button
+              name="time"
+              value={new Date()}
               type="submit"
               disabled={clientNameError || emailError || !dates[0]}
             >
@@ -254,7 +256,6 @@ function HotelSpecific({
         </div>
         <img src={cabin_mobile} alt="illustration" />
       </div>
-
       <div className={modalOpen ? 'specific-blur' : 'specific'}>
         <SingleHotel
           name={hotel.establishmentName}
@@ -265,11 +266,11 @@ function HotelSpecific({
           email={hotel.establishmentEmail}
           description={hotel.description}
         />
-        <div className="container__inner enquiry-button">
+        <div className="container__inner container__outer enquiry-button">
           <button onClick={openModal}>Make enquiry</button>
         </div>
 
-        <div className="google-map">
+        <div className="google-map google-map__single">
           <Map
             containerStyle={{height: 300, width: '100%'}}
             google={google}

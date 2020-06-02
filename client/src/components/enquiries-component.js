@@ -17,35 +17,37 @@ const EnquiriesComponent = ({
 }) => {
   return (
     <div className="card">
-      <h3>
-        <img src={home_icon_black} alt="icon" />
-        {establishment}
-      </h3>
-      <p>
-        <img src={user_icon_black} alt="icon" />
-        {name}
-      </p>
-      <p>
-        <img src={visitor_email_icon_black} alt="icon" />
-        <a href={`mailto:${email}`}>{email}</a>
-      </p>
-      <p>
-        <img src={check_in_icon_black} alt="icon" />
-        {checkin}
-      </p>
-      <p>
-        <img src={check_out_icon_black} alt="icon" />
-        {checkout}
-      </p>
-      <p>
-        <span>Adults:</span> {adults ? adults : 1}
-      </p>
-      <p>
-        <span>Children:</span> {children ? children : 0}
-      </p>
-      <p>
-        <span>Notes:</span> {notes ? notes : ''}
-      </p>
+      <div className="received-enquiries">
+        <h3>
+          <img src={home_icon_black} alt="icon" />
+          {establishment}
+        </h3>
+        <p>
+          <img src={user_icon_black} alt="icon" />
+          {name}
+        </p>
+        <p>
+          <img src={visitor_email_icon_black} alt="icon" />
+          <a href={`mailto:${email}`}>{email}</a>
+        </p>
+        <p>
+          <img src={check_in_icon_black} alt="icon" />
+          {checkin}
+        </p>
+        <p>
+          <img src={check_out_icon_black} alt="icon" />
+          {checkout}
+        </p>
+        <p>
+          <span>Adults:</span> {adults ? adults : 1}
+        </p>
+        <p>
+          <span>Children:</span> {children ? children : 0}
+        </p>
+        <p>
+          <span>Notes:</span> {notes ? notes : ''}
+        </p>
+      </div>
     </div>
   );
 };
