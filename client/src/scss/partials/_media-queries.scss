@@ -83,7 +83,7 @@
           background-position: 0 0;
           transform: scale(0.9);
           right: -50px;
-          bottom: -70px;
+          bottom: -85px;
           animation: none;
         }
         &__front {
@@ -129,6 +129,13 @@
   .illustration {
     .trees {
       bottom: -225px;
+    }
+  }
+  .Collapsible {
+    margin-top: 0;
+    &__contentOuter {
+      margin-top: 0;
+      padding-top: 0;
     }
   }
 }
