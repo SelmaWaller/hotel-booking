@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import ReactLoading from 'react-loading';
 
 import user_icon_black from '../../svgs/icons/user_icon_black.svg';
 import cabin_mobile from '../../images/cabin_mobile.png';
+import trees from '../../svgs/trees.svg';
+import Illustration from '../../components/illustration';
+
 import {
   ESTABLISHMENTS_API,
   ADD_ESTABLISHMENTS_SUCCESS,
@@ -103,6 +105,9 @@ export default function Establishments() {
 
   return (
     <>
+      <div className={modalOpen ? 'modal__closed' : 'blur'}>
+        <Illustration />
+      </div>
       <div className={modalOpen ? 'modal' : 'modal__closed'}>
         <button className="closeModal" onClick={closeModal}>
           <div className="bar1"></div>
@@ -249,12 +254,22 @@ export default function Establishments() {
       </div>
 
       <div
-        className={modalOpen ? 'new-establishment__blur' : 'new-establishment'}
+        className={
+          modalOpen ? 'new-establishment__hidden' : 'new-establishment'
+        }
       >
         <div className="new-establishment__background">
-          <div className="container__inner">
+          <div
+            className={
+              modalOpen ? 'container__inner--hidden' : 'container__inner'
+            }
+          >
             <button onClick={openModal}>Create new</button>
-            <h1>My establishments</h1>
+            {establishments.length > 0 ? (
+              <h1>My establishments</h1>
+            ) : (
+              <h1>No establishments published yet</h1>
+            )}
             <div className="grid">
               {establishments ? (
                 establishments.slice(17).map((establishment, index) => {
@@ -278,13 +293,9 @@ export default function Establishments() {
                 })
               ) : (
                 <>
-                  <div className="loading-circle">
-                    <ReactLoading
-                      type={'spinningBubbles'}
-                      color={'#ffc69c'}
-                      height={100}
-                      width={100}
-                    />
+                  <div className="card establishment-placeholder">
+                    <p>Your establishments will appear here</p>
+                    <img src={trees} alt="illustration" />
                   </div>
                 </>
               )}

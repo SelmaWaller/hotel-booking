@@ -21,16 +21,10 @@ const Navigation = () => {
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
-    toggleBodyScroll(!navOpen);
-  };
-
-  const toggleBodyScroll = (hidden) => {
-    document.body.style.overflow = hidden ? 'hidden' : 'inherit';
   };
 
   let closeMenu = () => {
     setNavOpen(false);
-    toggleBodyScroll(false);
   };
 
   const loginTokenExists = localStorage.getItem('token');
