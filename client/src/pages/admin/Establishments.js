@@ -37,6 +37,7 @@ export default function Establishments() {
   const [count, setCount] = useState(maxChars);
 
   useEffect(() => {
+    document.title = 'Holidaze | Establishments';
     axios.get(ESTABLISHMENTS_API).then((establishments) => {
       setEstablishments(establishments.data);
     });

@@ -33,6 +33,7 @@ function HotelSpecific({
       .get(ESTABLISHMENT_API + `?id=${parseFloat(id)}`)
       .then((hotelResult) => {
         setHotel(hotelResult.data);
+        document.title = `Holidaze | ${hotelResult.data.establishmentName}`;
       });
   }, [id]);
 

@@ -10,6 +10,7 @@ export default function Messages() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
+    document.title = 'Holidaze | Messages';
     axios.get(CONTACT_API).then((messages) => {
       setMessages(
         messages.data.sort(function (newer, older) {

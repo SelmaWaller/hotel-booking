@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Illustration from '../components/illustration';
 import trees from '../svgs/trees.svg';
 
@@ -13,6 +13,10 @@ export default function Contact() {
   const [message, setMessage] = useState('');
   const [messageError, setMessageError] = useState(true);
   const [count, setCount] = useState(minMessageChars);
+
+  useEffect(() => {
+    document.title = 'Holidaze | Contact';
+  }, []);
 
   let handleChange = (input) => {
     let name = input.target.name;

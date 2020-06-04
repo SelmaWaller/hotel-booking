@@ -21,6 +21,7 @@ export default function Home() {
   const [sortedLow, setSortedLow] = useState(undefined);
 
   useEffect(() => {
+    document.title = 'Holidaze | Home';
     axios.get(ESTABLISHMENTS_API).then((hotels) => {
       setHotels(
         hotels.data.sort(function (low, high) {

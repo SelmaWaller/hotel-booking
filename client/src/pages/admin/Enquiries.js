@@ -10,6 +10,7 @@ export default function Enquiries() {
   const [enquiries, setEnquiries] = useState([]);
 
   useEffect(() => {
+    document.title = 'Holidaze | Enquiries';
     axios.get(ENQUIRIES_API).then((enquiries) => {
       setEnquiries(
         enquiries.data.sort(function (older, newer) {
