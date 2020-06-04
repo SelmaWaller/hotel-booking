@@ -11,7 +11,10 @@ const MessagesComponent = ({name, email, message, time}) => {
       </div>
       <p>{message}</p>
       <div className="timestamp">
-        <p className="date-received">{time}</p>
+        <p>
+          <span>Received: </span>
+          {time}
+        </p>
       </div>
     </div>
   );

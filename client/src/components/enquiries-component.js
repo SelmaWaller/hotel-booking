@@ -48,7 +48,10 @@ const EnquiriesComponent = ({
         <p>
           <span>Notes:</span> {notes ? notes : ''}
         </p>
-        <p className="date-received">{time}</p>
+        <p>
+          <span>Received: </span>
+          {time}
+        </p>
       </div>
     </div>
   );

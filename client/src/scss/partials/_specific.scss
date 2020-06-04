@@ -1,5 +1,35 @@
+.specific-blur {
+  margin-top: -70px;
+  position: absolute;
+}
+
+.specific {
+  .container__outer {
+    .hotel-image__desktop {
+      max-height: 400px;
+      max-width: 550px;
+      width: 100%;
+      margin-bottom: 300px;
+      overflow: hidden;
+      img {
+        width: 150%;
+      }
+    }
+  }
+}
+
 .specific,
 .specific-blur {
+  top: 0;
+  margin-bottom: 190px;
+  width: 100%;
+
+  .container__outer {
+    .hotel-image__desktop {
+      display: none;
+    }
+  }
+
   .enquiry-button {
     margin-top: -30px;
   }
@@ -38,6 +68,10 @@
     margin-top: -12px;
     display: grid;
     align-items: center;
+
+    h1 {
+      display: none;
+    }
 
     p {
       margin-top: 30px;

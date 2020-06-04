@@ -266,10 +266,8 @@ function HotelSpecific({
           catering={hotel.selfCatering}
           email={hotel.establishmentEmail}
           description={hotel.description}
+          openModal={openModal}
         />
-        <div className="container__inner container__outer enquiry-button">
-          <button onClick={openModal}>Make enquiry</button>
-        </div>
 
         <div className="google-map google-map__single">
           <Map
