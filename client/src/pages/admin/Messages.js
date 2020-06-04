@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import ReactLoading from 'react-loading';
 
 import MessagesComponent from '../../components/messages-component';
 import {CONTACT_API} from '../../constants/constants';
 import Illustration from '../../components/illustration';
+import trees from '../../svgs/trees.svg';
 
 export default function Messages() {
   const [messages, setMessages] = useState([]);
@@ -32,10 +32,10 @@ export default function Messages() {
           <div className="container__inner">
             <h1>Messages</h1>
           </div>
-          <div className="admin-grid">
-            {messages ? (
-              messages.map((message, index) => {
-                return (
+          {messages ? (
+            messages.map((message, index) => {
+              return (
+                <>
                   <MessagesComponent
                     key={index}
                     name={message.clientName}
@@ -46,20 +46,17 @@ export default function Messages() {
                       .split('.')
                       .join('/')}
                   />
-                );
-              })
-            ) : (
-              <>
-                <div className="loading-circle">
-                  <ReactLoading
-                    type={'spinningBubbles'}
-                    color={'#ffc69c'}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              </>
-            )}
+                </>
+              );
+            })
+          ) : (
+            <div className="enquiries-and-messages__empty">
+              <p>No messages received yet</p>
+              <img src={trees} alt="illustration" />
+            </div>
+          )}
+          <div className="trees">
+            <img src={trees} alt="illustration" />
           </div>
         </div>
       </div>

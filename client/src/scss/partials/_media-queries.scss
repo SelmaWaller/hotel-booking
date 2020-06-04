@@ -74,10 +74,13 @@
   }
 
   .specific {
+    .google-map {
+      margin-bottom: 405px;
+    }
     .desktop-shadow {
       max-height: 440px;
       max-width: 900px;
-      margin: 0 auto 60px;
+      margin: 0 auto 100px;
       box-shadow: 0 0 10px rgba($brand-shadow, 0.8);
       position: relative;
       .enquiry-button {
