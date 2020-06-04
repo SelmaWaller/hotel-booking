@@ -33,7 +33,7 @@
   .card {
     box-shadow: 0 0 10px rgba($brand-shadow, 0.5);
     min-height: 300px;
-
+    max-width: 100%;
     .container__inner {
       padding: 0 10px;
     }

@@ -8,6 +8,16 @@
   }
 }
 
+@keyframes mountainBackDesktop {
+  0% {
+    background-position: 0 -50%;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
 @keyframes mountainMiddle {
   0%,
   15% {
@@ -19,6 +29,16 @@
   }
 }
 
+@keyframes mountainMiddleDesktop {
+  0%,
+  15% {
+    background-position: 150px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
 @keyframes mountainFront {
   0%,
   30% {
@@ -27,6 +47,16 @@
 
   100% {
     background-position: 0 90%;
+  }
+}
+
+@keyframes mountainFrontDesktop {
+  0%,
+  30% {
+    background-position: -120px 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 
@@ -50,12 +80,18 @@
   }
 }
 
-@keyframes birds {
-  0% {
-    opacity: 0;
-    background-position: 0 50%;
+@keyframes treesDesktop {
+  0%,
+  30% {
+    bottom: -470px;
   }
+  100% {
+    bottom: -190px;
+  }
+}
 
+@keyframes birds {
+  0%,
   70% {
     opacity: 0;
     background-position: 0 50%;
@@ -64,6 +100,18 @@
   100% {
     opacity: 1;
     background-position: 0 100%;
+  }
+}
+
+@keyframes birdsDesktop {
+  0%,
+  60% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

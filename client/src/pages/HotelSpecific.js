@@ -24,9 +24,12 @@ function HotelSpecific({
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
 
   const [clientNameError, setClientNameError] = useState(true);
+  const [clientName, setClientName] = useState('');
   const [emailError, setEmailError] = useState(true);
+  const [email, setEmail] = useState('');
   const [adultGuests, setAdultGuests] = useState(1);
   const [childGuests, setChildGuests] = useState(0);
+  const [notes, setNotes] = useState('');
 
   useEffect(() => {
     axios
@@ -46,9 +49,14 @@ function HotelSpecific({
     switch (name) {
       case 'clientName':
         setClientNameError(!namePattern.test(value));
+        setClientName(value);
         break;
       case 'email':
         setEmailError(!emailPattern.test(value));
+        setEmail(value);
+        break;
+      case 'notes':
+        setNotes(value);
         break;
       default:
         break;
@@ -95,7 +103,9 @@ function HotelSpecific({
             method="POST"
             action={ENQUIRY_SUCCESS}
             onSubmit={() => {
-              alert('*receipt popup*');
+              alert(
+                `Enquiry successfully sent \n\nName: ${clientName} \nEmail: ${email} \nCheck-in: ${checkInDate} \nCheck-out: ${checkOutDate} \nAdults: ${adultGuests} \nChildren: ${childGuests} \nNotes: ${notes} \n\nThank you!`
+              );
             }}
           >
             <div className="title">
@@ -239,6 +249,7 @@ function HotelSpecific({
               <label htmlFor="notes">Notes</label>
               <textarea
                 name="notes"
+                onChange={handleChange}
                 rows="5"
                 cols="80"
                 placeholder="Additional notes to the accommodation owner"

@@ -159,7 +159,6 @@ export default function Establishments() {
                 name="price"
                 min="1"
                 max="999"
-                defaultValue="20"
                 onChange={handleChange}
               />
               <span>$</span>
@@ -271,36 +270,34 @@ export default function Establishments() {
             ) : (
               <h1>No establishments published yet</h1>
             )}
-            <div className="grid">
-              {establishments ? (
-                establishments.slice(17).map((establishment, index) => {
-                  return (
-                    <div className="card" key={index}>
-                      <MyEstablishments
-                        key={index}
-                        img={establishment.imageUrl}
-                        name={establishment.establishmentName}
-                        email={establishment.establishmentEmail}
-                        price={establishment.price}
-                        guests={establishment.maxGuests}
-                        catering={establishment.selfCatering}
-                        lat={establishment.googleLat}
-                        lng={establishment.googleLong}
-                        id={establishment.id}
-                        description={establishment.description}
-                      />
-                    </div>
-                  );
-                })
-              ) : (
-                <>
-                  <div className="card establishment-placeholder">
-                    <p>Your establishments will appear here</p>
-                    <img src={trees} alt="illustration" />
+            {establishments ? (
+              establishments.slice(17).map((establishment, index) => {
+                return (
+                  <div className="card" key={index}>
+                    <MyEstablishments
+                      key={index}
+                      img={establishment.imageUrl}
+                      name={establishment.establishmentName}
+                      email={establishment.establishmentEmail}
+                      price={establishment.price}
+                      guests={establishment.maxGuests}
+                      catering={establishment.selfCatering}
+                      lat={establishment.googleLat}
+                      lng={establishment.googleLong}
+                      id={establishment.id}
+                      description={establishment.description}
+                    />
                   </div>
-                </>
-              )}
-            </div>
+                );
+              })
+            ) : (
+              <>
+                <div className="card establishment-placeholder">
+                  <p>Your establishments will appear here</p>
+                  <img src={trees} alt="illustration" />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
