@@ -13,6 +13,9 @@ import new_establishment_icon from '../svgs/icons/new_establishment_icon.svg';
 import enquiries_icon from '../svgs/icons/enquiries_icon.svg';
 import messages_icon from '../svgs/icons/messages_icon.svg';
 
+import Hamburger from '../components/hamburger';
+import NavLogin from '../components/nav-login';
+
 const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [loginInfo, setLoginInfo] = useState(false);
@@ -55,53 +58,11 @@ const Navigation = () => {
     setLoginInfo(false);
   };
 
-  let cancelLogin = (event) => {
-    event.preventDefault();
-    localStorage.removeItem('admin');
-    localStorage.removeItem('password');
-    localStorage.removeItem('token');
-    setLoginInfo(false);
-  };
-
   return (
     <>
       <div className="navigation">
         <button className="toggle-button" onClick={toggleNav}></button>
-        <div className="hamburger">
-          <div className="paired">
-            <div
-              className={navOpen ? 'hamburger__top1--close' : 'hamburger__top1'}
-            ></div>
-            <div
-              className={navOpen ? 'hamburger__top2--close' : 'hamburger__top2'}
-            ></div>
-          </div>
-
-          <div className="paired">
-            <div
-              className={
-                navOpen ? 'hamburger__middle1--close' : 'hamburger__middle1'
-              }
-            ></div>
-            <div
-              className={
-                navOpen ? 'hamburger__middle2--close' : 'hamburger__middle2'
-              }
-            ></div>
-          </div>
-          <div className="paired">
-            <div
-              className={
-                navOpen ? 'hamburger__bottom1--close' : 'hamburger__bottom1'
-              }
-            ></div>
-            <div
-              className={
-                navOpen ? 'hamburger__bottom2--close' : 'hamburger__bottom2'
-              }
-            ></div>
-          </div>
-        </div>
+        <Hamburger navOpen={navOpen} />
       </div>
 
       <div
@@ -202,55 +163,16 @@ const Navigation = () => {
         </div>
       </div>
 
-      <div className={loginInfo ? 'login' : 'login__hidden'}>
-        <div className={navOpen ? 'content' : 'content__hidden'}>
-          <div className="logo">
-            <img src={logo_dark} alt="logo" />
-            <h3>HOLIDAZE</h3>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <h3>
-              <label htmlFor="username">Username</label>
-            </h3>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="username"
-              id="username"
-              placeholder="admin"
-            />
-            <p className={usernameError ? 'error' : 'error__hidden'}>
-              Username is 'admin'
-            </p>
-            <h3>
-              <label htmlFor="password">Password</label>
-            </h3>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="password"
-              id="password"
-              placeholder="••••••••"
-            />
-            <p className={passwordError ? 'error' : 'error__hidden'}>
-              Password is 'admin'
-            </p>
-            <div className="paired">
-              <button
-                type="submit"
-                disabled={usernameError || passwordError}
-                className="submitButton"
-              >
-                Confirm
-              </button>
-              <button className="secondaryButton" onClick={cancelLogin}>
-                Cancel
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
+      <NavLogin
+        loginInfo={loginInfo}
+        setLoginInfo={setLoginInfo}
+        navOpen={navOpen}
+        logo_dark={logo_dark}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        usernameError={usernameError}
+        passwordError={passwordError}
+      />
       <div
         className={
           navOpen ? 'content-background' : 'content-background__hidden'
