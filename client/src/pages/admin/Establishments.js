@@ -270,7 +270,8 @@ export default function Establishments() {
             ) : (
               <h1>No establishments published yet</h1>
             )}
-            {establishments ? (
+            {establishments.length > 17 ? (
+              //if the length of the array could be changed,the condition would look for a value of this admin's establishments
               establishments.slice(17).map((establishment, index) => {
                 return (
                   <div className="card" key={index}>
