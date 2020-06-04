@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-import trees from '../../svgs/trees.svg';
+import cabin from '../../images/cabin_mobile.png';
 import Illustration from '../../components/illustration';
 import {ESTABLISHMENTS_API} from '../../constants/constants';
 import MyEstablishments from '../../components/my-establishments';
@@ -72,12 +72,10 @@ export default function Establishments() {
                 );
               })
             ) : (
-              <>
-                <div className="card establishment-placeholder">
-                  <p>Your establishments will appear here</p>
-                  <img src={trees} alt="illustration" />
-                </div>
-              </>
+              <div className="card establishment-placeholder">
+                <p>Your establishments will appear here</p>
+                <img src={cabin} alt="illustration" />
+              </div>
             )}
           </div>
         </div>

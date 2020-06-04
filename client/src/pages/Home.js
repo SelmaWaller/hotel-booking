@@ -82,16 +82,14 @@ export default function Home() {
                 </div>
               </>
             ) : (
-              <>
-                <div className="loading-circle">
-                  <ReactLoading
-                    type={'spinningBubbles'}
-                    color={'#ffc69c'}
-                    height={100}
-                    width={100}
-                  />
-                </div>
-              </>
+              <div className="loading-circle">
+                <ReactLoading
+                  type={'spinningBubbles'}
+                  color={'#ffc69c'}
+                  height={100}
+                  width={100}
+                />
+              </div>
             )
           ) : (
             <>

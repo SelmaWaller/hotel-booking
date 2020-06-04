@@ -58,9 +58,6 @@ export default function Enquiries() {
               <img src={trees} alt="illustration" />
             </div>
           )}
-          <div className="trees">
-            <img src={trees} alt="illustration" />
-          </div>
         </div>
       </div>
     </div>
