@@ -121,3 +121,13 @@
 .specific-blur {
   filter: blur(30px);
 }
+
+.specific-blur {
+  margin-bottom: 0;
+  .header-area .hotel-image {
+    max-height: 100vh;
+  }
+  .google-map {
+    display: none;
+  }
+}
