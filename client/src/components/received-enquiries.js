@@ -5,7 +5,7 @@ import user_icon_black from '../svgs/icons/user_icon_black.svg';
 import visitor_email_icon_black from '../svgs/icons/visitor_email_icon_black.svg';
 import check_in_icon_black from '../svgs/icons/check_in_icon_black.svg';
 import check_out_icon_black from '../svgs/icons/check_out_icon_black.svg';
-const EnquiriesComponent = ({
+const ReceivedEnquiries = ({
   establishment,
   name,
   email,
@@ -57,4 +57,4 @@ const EnquiriesComponent = ({
   );
 };
 
-export default EnquiriesComponent;
+export default ReceivedEnquiries;

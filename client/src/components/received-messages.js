@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MessagesComponent = ({name, email, message, time}) => {
+const ReceivedMessages = ({name, email, message, time}) => {
   return (
     <div className="received-card">
       <h3>{name}</h3>
@@ -20,4 +20,4 @@ const MessagesComponent = ({name, email, message, time}) => {
   );
 };
 
-export default MessagesComponent;
+export default ReceivedMessages;

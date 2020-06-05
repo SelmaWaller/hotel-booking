@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-import MessagesComponent from '../../components/messages-component';
+import ReceivedMessages from '../../components/received-messages';
 import {CONTACT_API} from '../../constants/constants';
 import Illustration from '../../components/illustration';
 import trees from '../../svgs/trees.svg';
@@ -35,7 +35,7 @@ export default function Messages() {
           {messages ? (
             messages.map((message, index) => {
               return (
-                <MessagesComponent
+                <ReceivedMessages
                   key={index}
                   name={message.clientName}
                   email={message.email}

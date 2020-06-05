@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-import EnquiriesComponent from '../../components/enquiries-component';
+import ReceivedEnquiries from '../../components/received-enquiries';
 import {ENQUIRIES_API} from '../../constants/constants';
 import Illustration from '../../components/illustration';
 import trees from '../../svgs/trees.svg';
@@ -35,7 +35,7 @@ export default function Enquiries() {
           {enquiries ? (
             enquiries.map((enquiry, index) => {
               return (
-                <EnquiriesComponent
+                <ReceivedEnquiries
                   key={index}
                   establishment={enquiry.establishment}
                   name={enquiry.clientName}
