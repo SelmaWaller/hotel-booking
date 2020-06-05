@@ -35,18 +35,16 @@ export default function Messages() {
           {messages ? (
             messages.map((message, index) => {
               return (
-                <>
-                  <MessagesComponent
-                    key={index}
-                    name={message.clientName}
-                    email={message.email}
-                    message={message.message}
-                    time={new Date(message.time)
-                      .toLocaleDateString()
-                      .split('.')
-                      .join('/')}
-                  />
-                </>
+                <MessagesComponent
+                  key={index}
+                  name={message.clientName}
+                  email={message.email}
+                  message={message.message}
+                  time={new Date(message.time)
+                    .toLocaleDateString()
+                    .split('.')
+                    .join('/')}
+                />
               );
             })
           ) : (
