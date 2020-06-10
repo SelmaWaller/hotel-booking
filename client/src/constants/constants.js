@@ -1,15 +1,15 @@
-export const REACT_APP_BASEURI = 'http://localhost';
+export const REACT_APP_BASEURI = "http://localhost";
 export const ESTABLISHMENTS_API =
-  REACT_APP_BASEURI + '/hotel-booking/get-establishments.php';
+  REACT_APP_BASEURI + "/hotel-booking/get-establishments.php";
 export const ESTABLISHMENT_API =
-  REACT_APP_BASEURI + '/hotel-booking/get-establishment.php';
+  REACT_APP_BASEURI + "/hotel-booking/get-establishment.php";
 export const ADD_ESTABLISHMENTS_SUCCESS =
-  REACT_APP_BASEURI + '/hotel-booking/add-establishments-success.php';
+  REACT_APP_BASEURI + "/hotel-booking/add-establishments-success.php";
 export const ENQUIRIES_API =
-  REACT_APP_BASEURI + '/hotel-booking/get-enquiries.php';
+  REACT_APP_BASEURI + "/hotel-booking/get-enquiries.php";
 export const CONTACT_API =
-  REACT_APP_BASEURI + '/hotel-booking/get-contacts.php';
+  REACT_APP_BASEURI + "/hotel-booking/get-contacts.php";
 export const ENQUIRY_SUCCESS =
-  REACT_APP_BASEURI + '/hotel-booking/enquiry-success.php';
+  REACT_APP_BASEURI + "/hotel-booking/enquiry-success.php";
 export const CONTACT_SUCCESS =
-  REACT_APP_BASEURI + '/hotel-booking/contact-success.php';
+  REACT_APP_BASEURI + "/hotel-booking/contact-success.php";

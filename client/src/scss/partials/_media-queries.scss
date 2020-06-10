@@ -128,11 +128,6 @@
   }
 }
 @media only screen and(min-height: 850px) {
-  .illustration {
-    .trees {
-      bottom: -225px;
-    }
-  }
   .Collapsible {
     margin-top: 0;
     &__contentOuter {
@@ -147,7 +142,7 @@
   }
   .illustration {
     .background {
-      background-image: url('../../svgs/background-desktop.svg');
+      background-image: url("../../svgs/background-desktop.svg");
       background-position: -50px 0;
       background-size: cover;
       width: 105%;
@@ -155,14 +150,14 @@
 
       .mountain {
         &__back {
-          background-image: url('../../svgs/mountain_back-desktop.svg');
+          background-image: url("../../svgs/mountain_back-desktop.svg");
           background-position: 0 0;
           width: 100%;
           animation: mountainBackDesktop 0.8s ease-in-out;
         }
 
         &__middle {
-          background-image: url('../../svgs/mountain_middle-desktop.svg');
+          background-image: url("../../svgs/mountain_middle-desktop.svg");
           background-position: 0 0;
           transform: scale(0.9);
           right: -50px;
@@ -170,7 +165,7 @@
           animation: mountainMiddleDesktop 1s ease-in-out;
         }
         &__front {
-          background-image: url('../../svgs/mountain_front-desktop.svg');
+          background-image: url("../../svgs/mountain_front-desktop.svg");
           background-position: 0 0;
           left: -50px;
           width: 100%;
@@ -181,23 +176,23 @@
       }
     }
     .shadow {
-      background-image: url('../../svgs/shadow-desktop.svg');
+      background-image: url("../../svgs/shadow-desktop.svg");
       bottom: 0px;
       width: 100%;
       height: 300px;
     }
     .trees {
-      background-image: url('../../svgs/trees-desktop.svg');
+      background-image: url("../../svgs/trees-desktop.svg");
       background-position: 0 0;
       width: 105%;
       height: 150%;
-      bottom: -190px;
+      bottom: -215px;
       left: -150px;
       transform: scale(0.7);
       animation: treesDesktop 1.5s ease-out;
     }
     .birds {
-      background-image: url('../../svgs/birds-desktop.svg');
+      background-image: url("../../svgs/birds-desktop.svg");
       background-position: 0 0;
       width: 100%;
       left: -120px;
