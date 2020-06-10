@@ -1,14 +1,13 @@
-import React from 'react';
-import './index.css';
+import React from "react";
 
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import App from './App';
-import Admin from './pages/Admin';
-import Home from './pages/Home';
-import HotelSpecific from './pages/HotelSpecific';
-import Contact from './pages/Contact';
+import App from "./App";
+import Admin from "./pages/Admin";
+import Home from "./pages/Home";
+import HotelSpecific from "./pages/HotelSpecific";
+import Contact from "./pages/Contact";
 
 ReactDOM.render(
   <Router>
@@ -21,5 +20,5 @@ ReactDOM.render(
       </Switch>
     </App>
   </Router>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
