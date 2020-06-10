@@ -4,7 +4,7 @@ PHP and JSON files provided by Noroff
 
 ---
 
-TODO:
+TODO:<br>
 Redux
 
 Better filter:
