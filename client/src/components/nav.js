@@ -1,20 +1,20 @@
-import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-import login_icon_dark from '../svgs/icons/login_icon_dark.svg';
-import login_icon_white from '../svgs/icons/login_icon_white.svg';
-import logo_dark from '../svgs/logo_dark.svg';
-import logo_white from '../svgs/logo_white.svg';
-import home_icon_dark from '../svgs/icons/home_icon_dark.svg';
-import home_icon_white from '../svgs/icons/home_icon_white.svg';
-import contact_icon_dark from '../svgs/icons/contact_icon_dark.svg';
-import contact_icon_white from '../svgs/icons/contact_icon_white.svg';
-import new_establishment_icon from '../svgs/icons/new_establishment_icon.svg';
-import enquiries_icon from '../svgs/icons/enquiries_icon.svg';
-import messages_icon from '../svgs/icons/messages_icon.svg';
+import login_icon_dark from "../svgs/icons/login_icon_dark.svg";
+import login_icon_white from "../svgs/icons/login_icon_white.svg";
+import logo_dark from "../svgs/logo_dark.svg";
+import logo_white from "../svgs/logo_white.svg";
+import home_icon_dark from "../svgs/icons/home_icon_dark.svg";
+import home_icon_white from "../svgs/icons/home_icon_white.svg";
+import contact_icon_dark from "../svgs/icons/contact_icon_dark.svg";
+import contact_icon_white from "../svgs/icons/contact_icon_white.svg";
+import new_establishment_icon from "../svgs/icons/new_establishment_icon.svg";
+import enquiries_icon from "../svgs/icons/enquiries_icon.svg";
+import messages_icon from "../svgs/icons/messages_icon.svg";
 
-import Hamburger from '../components/hamburger';
-import NavLogin from '../components/nav-login';
+import Hamburger from "../components/hamburger";
+import NavLogin from "../components/nav-login";
 
 const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -30,7 +30,7 @@ const Navigation = () => {
     setNavOpen(false);
   };
 
-  const loginTokenExists = localStorage.getItem('token');
+  const loginTokenExists = localStorage.getItem("token");
 
   let handleChange = (input) => {
     let name = input.target.name;
@@ -39,10 +39,10 @@ const Navigation = () => {
     let password = /^admin$/;
 
     switch (name) {
-      case 'username':
+      case "username":
         username.test(value) ? setUsernameError(false) : setUsernameError(true);
         break;
-      case 'password':
+      case "password":
         password.test(value) ? setPasswordError(false) : setPasswordError(true);
         break;
       default:
@@ -52,9 +52,9 @@ const Navigation = () => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('admin', 'admin');
-    localStorage.setItem('password', 'admin');
-    localStorage.setItem('token', 'faketoken');
+    localStorage.setItem("admin", "admin");
+    localStorage.setItem("password", "admin");
+    localStorage.setItem("token", "faketoken");
     setLoginInfo(false);
   };
 
@@ -67,12 +67,12 @@ const Navigation = () => {
 
       <div
         className={
-          navOpen ? 'transparent-background' : 'transparent-background__hidden'
+          navOpen ? "transparent-background" : "transparent-background__hidden"
         }
         onClick={closeMenu}
       ></div>
-      <div className={loginTokenExists ? 'admin' : 'visitor'}>
-        <div className={navOpen ? 'content' : 'content__hidden'}>
+      <div className={loginTokenExists ? "admin" : "visitor"}>
+        <div className={navOpen ? "content" : "content__hidden"}>
           <div className="logo">
             <img src={loginTokenExists ? logo_white : logo_dark} alt="logo" />
             <h3>HOLIDAZE</h3>
@@ -80,23 +80,21 @@ const Navigation = () => {
           <div className="login">
             <img
               src={
-                localStorage.getItem('token')
+                localStorage.getItem("token")
                   ? login_icon_white
                   : login_icon_dark
               }
               alt="icon"
             />
-            <h3>{loginTokenExists ? 'Admin' : 'Visitor'}</h3>
+            <h3>{loginTokenExists ? "Admin" : "Visitor"}</h3>
             <button
               onClick={
-                localStorage.getItem('token')
+                localStorage.getItem("token")
                   ? () => {
                       setNavOpen(false);
-                      localStorage.removeItem('admin');
-                      localStorage.removeItem('password');
-                      localStorage.removeItem('token');
+                      localStorage.clear();
                       if (/admin/.test(window.location.href)) {
-                        window.location = '/';
+                        window.location = "/";
                       }
                     }
                   : () => {
@@ -104,7 +102,7 @@ const Navigation = () => {
                     }
               }
             >
-              {loginTokenExists ? 'Sign out' : 'Sign in'}
+              {loginTokenExists ? "Sign out" : "Sign in"}
             </button>
           </div>
           <div className="pages">
@@ -113,7 +111,7 @@ const Navigation = () => {
                 <NavLink to="/">
                   <img
                     src={
-                      localStorage.getItem('token')
+                      localStorage.getItem("token")
                         ? home_icon_white
                         : home_icon_dark
                     }
@@ -126,7 +124,7 @@ const Navigation = () => {
                 <NavLink to="/contact">
                   <img
                     src={
-                      localStorage.getItem('token')
+                      localStorage.getItem("token")
                         ? contact_icon_white
                         : contact_icon_dark
                     }
@@ -175,7 +173,7 @@ const Navigation = () => {
       />
       <div
         className={
-          navOpen ? 'content-background' : 'content-background__hidden'
+          navOpen ? "content-background" : "content-background__hidden"
         }
       ></div>
     </>
