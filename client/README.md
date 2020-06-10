@@ -20,8 +20,7 @@ Better specific page:<br>
 • wrap map in card and use illustration background like other pages
 
 Better responsiveness for tablets etc:<br>
-• convert media queries to conditions<br>
-• add width/height for tablets etc
+• add width/height for more devices
 
 Reformat code in scss:<br>
 • preferably convert scss to styled components
