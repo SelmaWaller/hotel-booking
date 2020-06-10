@@ -7,21 +7,21 @@ PHP and JSON files provided by Noroff
 TODO:<br>
 Redux
 
-Better filter:
+Better filter:<br>
 • max guests and price range use previous state
 
-Change response message on submitted form:
+Change response message on submitted form:<br>
 • snackbar or popup message
 
-Admin panel:
+Admin panel:<br>
 • merge enquiries, messages and establishments to one page
 
-Better specific page:
+Better specific page:<br>
 • wrap map in card and use illustration background like other pages
 
-Better responsiveness for tablets etc:
-• convert media queries to conditions
+Better responsiveness for tablets etc:<br>
+• convert media queries to conditions<br>
 • add width/height for tablets etc
 
-Reformat code in scss:
+Reformat code in scss:<br>
 • preferably convert scss to styled components
