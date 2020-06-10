@@ -13,6 +13,10 @@ Better filter:<br>
 Change response message on submitted form:<br>
 • snackbar or popup message
 
+Enquiries and messages:<br>
+• sort by new/old<br>
+• Orange cards for new/unseen enquiries/messages
+
 Admin panel:<br>
 • merge enquiries, messages and establishments to one page
 
