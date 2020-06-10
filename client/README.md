@@ -8,7 +8,8 @@ TODO:<br>
 Redux
 
 Better filter:<br>
-• max guests and price range use previous state
+• max guests and price range use previous state<br>
+• scroll down to content on Collapsible click
 
 Change response message on submitted form:<br>
 • snackbar or popup message
